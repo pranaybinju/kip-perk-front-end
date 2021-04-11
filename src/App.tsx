@@ -6,6 +6,7 @@ import {
 
 import { Login } from './components';
 import { Register } from './components';
+import { Reset } from './components';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         </Route>
         <Route path="/register">
           <Register />
+        </Route>
+        <Route path="/reset">
+          <Reset />
         </Route>
       </Switch>
     </Router>
