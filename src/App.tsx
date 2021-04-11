@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 
 import { Login } from './components';
+import { Register } from './components';
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
       <Switch>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/register">
+          <Register />
         </Route>
       </Switch>
     </Router>
