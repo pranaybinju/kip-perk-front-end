@@ -1,31 +1,60 @@
-import React from 'react';
-
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import Gift from "../assets/undraw_gift1.svg";
 
 function Login() {
   return (
-    <div className="bg-white lg:w-4/12 md:6/12 w-10/12 m-auto my-10 shadow-md">
-      <div className="py-8 px-8 rounded-xl">
-        <h1 className="font-medium text-2xl mt-3 text-center">Login</h1>
+    <div className="text-black h-full flex justify-center items-center">
+      <img
+        alt="login-img"
+        className="h-80 w-40 flex-1 object-contain"
+        src={Gift}
+      />
+      <div className="m-10 flex-1 bg-white">
+        <div className="py-8 px-8 rounded-md shadow-lg">
+          <h1 className="font-medium text-2xl  text-center">Login</h1>
 
-        <form className="mt-6">
-          <div className="my-5 text-sm">
-            <label htmlFor="username" className="block text-black">Username</label>
-            <input type="text" autoFocus id="username" className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full" placeholder="Username" />
-          </div>
-
-          <div className="my-5 text-sm">
-            <label htmlFor="password" className="block text-black">Password</label>
-            <input type="password" id="password" className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full" placeholder="Password" />
-            <div className="flex justify-end mt-2 text-xs text-gray-600">
-              <Link to="/reset">Forgot Password?</Link>
+          <form>
+            <div className="my-5 text-sm">
+              <label htmlFor="username" className="block">
+                Username
+              </label>
+              <input
+                type="text"
+                autoFocus
+                id="username"
+                className="border border-gray-500 rounded-md px-4 py-3 mt-3 focus:outline-none w-full"
+                placeholder="Username"
+              />
             </div>
-          </div>
 
-          <button className="block text-center text-white bg-gray-800 p-3 duration-300 rounded-sm hover:bg-black w-full">Login</button>
-        </form>
+            <div className="my-5 text-sm">
+              <label htmlFor="password" className="block ">
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                className="border border-gray-500 rounded-md px-4 py-3 mt-3 focus:outline-none  w-full"
+                placeholder="Password"
+              />
+              <div className="flex justify-end mt-2 text-xs ">
+                <Link to="/reset">Forgot Password?</Link>
+              </div>
+            </div>
 
-        <p className="mt-12 text-xs text-center font-light text-gray-400">Don't have an account? <Link to="/register" className="text-black font-medium">Register</Link></p> 
+            <button className="border border-primary rounded-md self-center text-center p-2 duration-300 text-primary  hover:bg-primary hover:text-white w-20">
+              Login
+            </button>
+          </form>
+
+          <p className="mt-12 text-xs text-center font-light">
+            Don't have an account?{" "}
+            <Link to="/register" className="text-black font-medium">
+              Register
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );
