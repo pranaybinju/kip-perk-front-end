@@ -10,8 +10,8 @@ function Dashboard() {
   const location = useLocation();
 
   return (
-    <div className="bg-white">
-      <div className="bg-gray-800 rounded-xl h-16 w-11/12 m-auto mt-3.5 shadow-md flex items-center justify-between">
+    <React.Fragment>
+      <nav className="bg-gray-800 rounded-xl h-16 w-11/12 m-auto mt-3.5 shadow-md flex items-center justify-between">
         <img className="block mx-4 rounded-full h-10 w-10 object-cover" src="https://images.unsplash.com/photo-1548546738-8509cb246ed3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80" />
         <div className="self-stretch flex">
           <NavLink to="/" exact className="mx-2 pt-3 h-10 w-10 rounded-b-full flex items-center justify-center box-content border border-t-0 border-transparent hover:border-yellow-500" activeClassName="bg-yellow-500">
@@ -27,8 +27,8 @@ function Dashboard() {
         <button className="mx-4 border border-red-500 group hover:bg-red-500 h-10 w-10 rounded-full flex items-center justify-center">
           <LogoutIcon className="h-5 w-5 text-red-500 group-hover:text-white" />
         </button>
-      </div>
-    </div>
+      </nav>
+    </React.Fragment>
   );
 }
 
