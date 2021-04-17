@@ -1,13 +1,17 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-import { Login } from "./components";
-import { Register } from "./components";
-import { Reset } from "./components";
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import { Login } from "./screens";
+import { Register } from "./screens";
+import Container from "./components/Container";
+//ROUTE TO BE MADE PRIVATE BASED ON PERMISSION
 function App() {
   return (
-    <div className="text-primary bg-secondary h-full">
+    <Container className="text-primary bg-secondary h-full">
       <Router>
         <Switch>
           <Route path="/login">
@@ -16,12 +20,10 @@ function App() {
           <Route path="/register">
             <Register />
           </Route>
-          <Route path="/reset">
-            <Reset />
-          </Route>
+          <Redirect to={{ pathname: "/login" }} />
         </Switch>
       </Router>
-    </div>
+    </Container>
   );
 }
 
