@@ -1,0 +1,167 @@
+import { ClaimEnum, VerificationStatusEnum } from "./enum";
+
+const verificationJSON = [
+  {
+    EmpId: 1,
+    FirstName: "Sam",
+    LastName: "Wilson",
+    Email: "sam.wilson@kiprosh.com",
+    ClaimFor: ClaimEnum.Hiring,
+    ImageURL: "",
+    Witnesses: [
+      {
+        EmpId: 10,
+        FirstName: "Carol",
+        LastName: "Denvers",
+        Email: "carol.denvers@kiprosh.com",
+        Claims: [ClaimEnum.Hiring, ClaimEnum.COE],
+        ImageURL: "",
+        TotalPoints: 30,
+      },
+
+      {
+        EmpId: 5,
+        FirstName: "Stepehen",
+        LastName: "Strange",
+        Email: "stephen.strange@kiprosh.com",
+        Claims: [ClaimEnum.Hiring, ClaimEnum.COE],
+        ImageURL: "",
+        TotalPoints: 30,
+      },
+    ],
+    PointsToClaim: 10,
+    ClaimDate: "2021-04-24T13:49:51.141Z",
+    Status: VerificationStatusEnum.Approved,
+  },
+
+  {
+    EmpId: 2,
+    FirstName: "James",
+    LastName: "Rhodes",
+    Email: "james.rhodes@kiprosh.com",
+    ClaimFor: ClaimEnum.COE,
+    ImageURL: "",
+    Witnesses: [
+      {
+        EmpId: 10,
+        FirstName: "Carol",
+        LastName: "Denvers",
+        Email: "carol.denvers@kiprosh.com",
+        Claims: [ClaimEnum.Hiring, ClaimEnum.COE],
+        ImageURL: "",
+        TotalPoints: 30,
+      },
+
+      {
+        EmpId: 5,
+        FirstName: "Stepehen",
+        LastName: "Strange",
+        Email: "stephen.strange@kiprosh.com",
+        Claims: [ClaimEnum.Hiring, ClaimEnum.COE],
+        ImageURL: "",
+        TotalPoints: 30,
+      },
+    ],
+    PointsToClaim: 10,
+    ClaimDate: "2021-04-24T12:49:51.141Z",
+    Status: VerificationStatusEnum.Pending,
+  },
+
+  {
+    EmpId: 3,
+    FirstName: "Peter",
+    LastName: "Parker",
+    Email: "peter.parker@kiprosh.com",
+    ClaimFor: ClaimEnum.COE,
+    ImageURL: "",
+    Witnesses: [
+      {
+        EmpId: 7,
+        FirstName: "Tony",
+        LastName: "Stark",
+        Email: "tony.stark@kiprosh.com",
+        Claims: [ClaimEnum.KFC, ClaimEnum.COE],
+        ImageURL: "",
+        TotalPoints: 90,
+      },
+
+      {
+        EmpId: 5,
+        FirstName: "Stepehen",
+        LastName: "Strange",
+        Email: "stephen.strange@kiprosh.com",
+        Claims: [ClaimEnum.Hiring, ClaimEnum.COE],
+        ImageURL: "",
+        TotalPoints: 30,
+      },
+    ],
+    PointsToClaim: 10,
+    ClaimDate: "2021-04-24T15:49:51.141Z",
+    Status: VerificationStatusEnum.Approved,
+  },
+
+  {
+    EmpId: 4,
+    FirstName: "Bruce",
+    LastName: "Banner",
+    Email: "bruce.banner@kiprosh.com",
+    ClaimFor: ClaimEnum.KFC,
+    ImageURL: "",
+    Witnesses: [
+      {
+        EmpId: 3,
+        FirstName: "Peter",
+        LastName: "Parker",
+        Email: "peter.parker@kiprosh.com",
+        Claims: [ClaimEnum.KFC, ClaimEnum.COE],
+        ImageURL: "",
+        TotalPoints: 30,
+      },
+      {
+        EmpId: 7,
+        FirstName: "Tony",
+        LastName: "Stark",
+        Email: "tony.stark@kiprosh.com",
+        Claims: [ClaimEnum.KFC, ClaimEnum.COE],
+        ImageURL: "",
+        TotalPoints: 90,
+      },
+    ],
+    PointsToClaim: 10,
+    ClaimDate: "2021-04-24T14:49:51.141Z",
+    Status: VerificationStatusEnum.Pending,
+  },
+
+  {
+    EmpId: 5,
+    FirstName: "Stepehen",
+    LastName: "Strange",
+    Email: "stephen.strange@kiprosh.com",
+    ClaimFor: ClaimEnum.COE,
+    ImageURL: "",
+    Witnesses: [
+      {
+        EmpId: 7,
+        FirstName: "Tony",
+        LastName: "Stark",
+        Email: "tony.stark@kiprosh.com",
+        Claims: [ClaimEnum.KFC, ClaimEnum.COE],
+        ImageURL: "",
+        TotalPoints: 90,
+      },
+
+      {
+        EmpId: 8,
+        FirstName: "Steve",
+        LastName: "Rogers",
+        Email: "steve.rogersnt@kiprosh.com",
+        Claims: [ClaimEnum.COE],
+        ImageURL: "",
+        TotalPoints: 80,
+      },
+    ],
+    PointsToClaim: 10,
+    ClaimDate: "2021-04-24T12:49:51.141Z",
+    Status: VerificationStatusEnum.Rejected,
+  },
+];

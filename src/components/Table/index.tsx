@@ -10,57 +10,49 @@ import {
   TablePropGetter,
   TableBodyPropGetter,
 } from "react-table";
+import Pagination from "./Pagination";
 import { ControlledTableProps } from "./ITable";
 
 //TO BE UPDATED AS WE PROCEED
 const Table = <T extends {}>({
   columns,
   data,
-
-  tableHeading,
-  pageCount: controlledPageCount,
-  onRowClick,
-  emptyPlaceholder,
-  fetchData,
-  isLoading,
-}: ControlledTableProps<T>) => {
+}: // tableHeading,
+// pageSize: initialPageSize,
+// pageCount: controlledPageCount,
+// onRowClick,
+// emptyPlaceholder,
+// fetchData,
+// isLoading,
+ControlledTableProps<T>) => {
   const {
     getTableProps,
+    getTableBodyProps,
     headerGroups,
     prepareRow,
-    rows,
-    getTableBodyProps,
-    // //@ts-ignore
-    // selectedFlatRows,
-    // //@ts-ignore
-    // page,
-    // //@ts-ignore
-    // canPreviousPage,
-    // //@ts-ignore
-    // canNextPage,
-    // //@ts-ignore
-    // pageOptions,
-    // //@ts-ignore
-    // nextPage,
-    // //@ts-ignore
-    // previousPage,
-    // //@ts-ignore
-    // setPageSize,
-  } = useTable<T>(
+    page, // Instead of using 'rows', we'll use page,
+    // which has only the rows for the active page
+
+    // The rest of these things are super handy, too ;)
+    canPreviousPage,
+    canNextPage,
+    pageOptions,
+    pageCount,
+    gotoPage,
+    nextPage,
+    previousPage,
+    setPageSize,
+    state: { pageIndex, pageSize },
+  } = useTable(
     {
       columns,
       data,
-      //   initialState: { pageIndex: 0 },
-      // manualPagination: true,
-      // manualSortBy: true,
-      // pageCount: controlledPageCount,
+      initialState: { pageIndex: 2 },
     },
-    useSortBy,
     usePagination
   );
-
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-3xl">
       <table
         className="min-w-full divide-y divide-gray-200"
         {...getTableProps()}
@@ -83,7 +75,7 @@ const Table = <T extends {}>({
           className="bg-white divide-y divide-gray-200"
           {...getTableBodyProps()}
         >
-          {rows.map((row: any, i) => {
+          {page.map((row: any, i) => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
@@ -102,6 +94,14 @@ const Table = <T extends {}>({
           })}
         </tbody>
       </table>
+      <Pagination
+        pageOptions={pageOptions}
+        previousPage={previousPage}
+        canPreviousPage={canPreviousPage}
+        nextPage={nextPage}
+        canNextPage={canNextPage}
+        pageIndex={pageIndex}
+      />
     </div>
   );
 };

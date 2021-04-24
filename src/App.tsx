@@ -6,21 +6,25 @@ import {
   Redirect,
 } from "react-router-dom";
 import { Login } from "./screens";
+import Home from "./screens/home";
 import { Register } from "./screens";
 import Container from "./components/Container";
 //ROUTE TO BE MADE PRIVATE BASED ON PERMISSION
 function App() {
   return (
-    <Container className="text-primary bg-secondary h-full">
+    <Container className="text-primary bg-secondary h-full  overflow-auto">
       <Router>
         <Switch>
           <Route path="/login">
             <Login />
           </Route>
+          <Route path="/">
+            <Home />
+          </Route>
           <Route path="/register">
             <Register />
           </Route>
-          <Redirect to={{ pathname: "/login" }} />
+          <Redirect to={{ pathname: "/" }} />
         </Switch>
       </Router>
     </Container>
