@@ -1,29 +1,40 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
-import { Login } from "./components";
-import { Register } from "./components";
-import { Reset } from "./components";
-import { Dashboard } from './components';
+import Login from "./screens/Login";
+import Verifications from "./screens/Verifications";
+import Home from "./screens/home";
+import Register from "./screens/Register";
+import Container from "./components/Container";
 
+// TODO: Route to be made private based on permissions
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/register">
-          <Register />
-        </Route>
-        <Route path="/reset">
-          <Reset />
-        </Route>
-        <Route path="/">
-          <Dashboard />
-        </Route>
-      </Switch>
-    </Router>
+    <Container className="text-primary bg-secondary h-full  overflow-auto">
+      <Router>
+        <Switch>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+
+          <Route exact path="/register">
+            <Register />
+          </Route>
+          <Route exact path="/verify">
+            <Verifications />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+          <Redirect to={{ pathname: "/" }} />
+        </Switch>
+      </Router>
+    </Container>
   );
 }
 
