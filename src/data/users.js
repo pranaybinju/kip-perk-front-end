@@ -1,5 +1,5 @@
 import { ClaimEnum } from "./enum";
-const users = [
+export const userJSON = [
   {
     EmpId: 1,
     FirstName: "Sam",
@@ -8,6 +8,8 @@ const users = [
     Claims: [ClaimEnum.Hiring, ClaimEnum.KFC],
     ImageURL: "",
     TotalPoints: 10,
+    UserName: "sam",
+    Password: "sam123",
   },
 
   {
@@ -18,6 +20,8 @@ const users = [
     Claims: [ClaimEnum.COE],
     ImageURL: "",
     TotalPoints: 20,
+    UserName: "james",
+    Password: "james123",
   },
 
   {
@@ -25,9 +29,12 @@ const users = [
     FirstName: "Peter",
     LastName: "Parker",
     Email: "peter.parker@kiprosh.com",
+
     Claims: [ClaimEnum.KFC, ClaimEnum.COE],
     ImageURL: "",
     TotalPoints: 30,
+    UserName: "peter",
+    Password: "peter123",
   },
 
   {
@@ -38,6 +45,8 @@ const users = [
     Claims: [ClaimEnum.COE, ClaimEnum.KFC],
     ImageURL: "",
     TotalPoints: 10,
+    UserName: "bruce",
+    Password: "bruce123",
   },
 
   {
@@ -48,6 +57,8 @@ const users = [
     Claims: [ClaimEnum.Hiring, ClaimEnum.COE],
     ImageURL: "",
     TotalPoints: 30,
+    UserName: "stephen",
+    Password: "stephen123",
   },
 
   {
@@ -58,6 +69,8 @@ const users = [
     Claims: [ClaimEnum.COE],
     ImageURL: "",
     TotalPoints: 40,
+    UserName: "natasha",
+    Password: "natasha123",
   },
 
   {
@@ -68,6 +81,8 @@ const users = [
     Claims: [ClaimEnum.KFC, ClaimEnum.COE],
     ImageURL: "",
     TotalPoints: 90,
+    UserName: "tony",
+    Password: "tony123",
   },
 
   {
@@ -78,6 +93,8 @@ const users = [
     Claims: [ClaimEnum.COE],
     ImageURL: "",
     TotalPoints: 80,
+    UserName: "steve",
+    Password: "steve123",
   },
 
   {
@@ -88,6 +105,8 @@ const users = [
     Claims: [ClaimEnum.Hiring],
     ImageURL: "",
     TotalPoints: 50,
+    UserName: "nick",
+    Password: "nick123",
   },
 
   {
@@ -98,5 +117,7 @@ const users = [
     Claims: [ClaimEnum.Hiring, ClaimEnum.COE],
     ImageURL: "",
     TotalPoints: 30,
+    UserName: "carol",
+    Password: "carol123",
   },
 ];
