@@ -26,7 +26,7 @@ function Claim() {
         <label htmlFor="date" className="block">
           Peers
         </label>
-        <Select options={[{ value: 'toby-flenderson', label: 'Toby Flenderson' }, { value: 'stanley-hudson', label: 'Stanley Hudson' }, { value: 'pam-beesly', label: 'Pam Beesly' }]} isMulti classNamePrefix="react-select" />
+        <Select options={[{ value: 'toby-flenderson', label: 'Toby Flenderson' }, { value: 'stanley-hudson', label: 'Stanley Hudson' }, { value: 'pam-beesly', label: 'Pam Beesly' }]} isMulti classNamePrefix="react-select" placeholder="Select min 2 peers..." />
       </div>
 
       <div className="my-5 text-sm">
