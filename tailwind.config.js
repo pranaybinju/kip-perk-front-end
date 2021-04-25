@@ -99,6 +99,10 @@ module.exports = {
         DEFAULT: "1rem",
         lg: "1.2rem",
       },
+      flex: {
+        25: "22%",
+        50: "43%",
+      },
     },
   },
   variants: {

@@ -38,13 +38,13 @@ function Login() {
   );
 
   return (
-    <Container className="text-black h-full flex justify-center items-center">
+    <Container className="text-black h-full flex md:flex-row flex-col justify-center items-center">
       <Image
         alt="login-img"
-        className="h-80 w-40 flex-1 object-contain"
+        className="h-40 md:h-80 w-40 flex-1 object-contain"
         src={Gift}
       />
-      <Container className="m-10 flex-1 bg-white">
+      <Container className="m-10 md:flex-1 bg-white">
         <Container className="py-8 px-8 rounded-md shadow-lg">
           <Heading className="font-medium text-2xl text-center">Login</Heading>
 
