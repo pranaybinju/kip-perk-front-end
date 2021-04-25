@@ -9,6 +9,7 @@ import {
 } from '@heroicons/react/solid';
 
 import Claim from './Claim';
+import Home from './Home';
 
 function Dashboard() {
   const location = useLocation();
@@ -37,6 +38,9 @@ function Dashboard() {
         <Switch>
           <Route path="/claim">
             <Claim />
+          </Route>
+          <Route path="/">
+            <Home />
           </Route>
         </Switch>
       </main>
