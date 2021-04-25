@@ -6,11 +6,13 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import Login from "./screens/Login";
-import Verifications from "./screens/Verifications";
-import Home from "./screens/home";
-import Register from "./screens/Register";
-import Container from "./components/Container";
+import {
+  Login,
+  Verifications,
+  Register,
+  Home
+} from "./screens";
+import { Container } from "./components";
 
 // TODO: Route to be made private based on permissions
 function App() {
