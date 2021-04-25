@@ -8,8 +8,11 @@ import {
   KeyIcon, TicketIcon
 } from '@heroicons/react/solid';
 
-import Claim from './Claim';
-import Home from './Home';
+import {
+  Claim,
+  Home,
+  Verify
+} from '../components';
 
 function Dashboard() {
   const location = useLocation();
@@ -39,6 +42,11 @@ function Dashboard() {
           <Route path="/claim">
             <Claim />
           </Route>
+
+          <Route path="/verify">
+            <Verify />
+          </Route>
+
           <Route path="/">
             <Home />
           </Route>

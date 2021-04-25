@@ -17,7 +17,7 @@ import { ClaimEnum, VerificationStatusEnum } from "../data/enum";
 import { FcCheckmark } from "react-icons/fc";
 import { RiCloseFill } from "react-icons/ri";
 
-function Verifications() {
+function Verify() {
   const [claimToVerify, setClaimToVerify] = useState<any>(null);
 
   //temp state for demo
@@ -313,4 +313,4 @@ function Verifications() {
   );
 }
 
-export default Verifications;
+export default Verify;

@@ -8,16 +8,15 @@ import {
 
 import {
   Login,
-  Verifications,
   Register,
-  Home
+  Dashboard
 } from "./screens";
 import { Container } from "./components";
 
 // TODO: Route to be made private based on permissions
 function App() {
   return (
-    <Container className="text-primary bg-secondary h-full  overflow-auto">
+    <Container className="text-primary bg-secondary h-full overflow-auto">
       <Router>
         <Switch>
           <Route exact path="/login">
@@ -27,11 +26,9 @@ function App() {
           <Route exact path="/register">
             <Register />
           </Route>
-          <Route exact path="/verify">
-            <Verifications />
-          </Route>
+
           <Route path="/">
-            <Home />
+            <Dashboard />
           </Route>
           <Redirect to={{ pathname: "/" }} />
         </Switch>
