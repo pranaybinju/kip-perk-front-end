@@ -1,4 +1,5 @@
 import React from 'react';
+import Select from 'react-select';
 
 function Claim() {
   return (
@@ -19,6 +20,13 @@ function Claim() {
           Date
         </label>
         <input type="date" id="date" className="border border-gray-500 rounded-md px-4 py-3 mt-3 focus:outline-none w-full" />
+      </div>
+
+      <div className="my-5 text-sm">
+        <label htmlFor="date" className="block">
+          Peers
+        </label>
+        <Select options={[{ value: 'toby-flenderson', label: 'Toby Flenderson' }, { value: 'stanley-hudson', label: 'Stanley Hudson' }, { value: 'pam-beesly', label: 'Pam Beesly' }]} isMulti classNamePrefix="react-select" />
       </div>
 
       <div className="my-5 text-sm">
