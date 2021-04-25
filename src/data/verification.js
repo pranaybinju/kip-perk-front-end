@@ -1,7 +1,8 @@
 import { ClaimEnum, VerificationStatusEnum } from "./enum";
 
-const verificationJSON = [
+export const verificationJSON = [
   {
+    ClaimId: "5c055362-59b7-460d-9f1b-255b2f5032ab",
     EmpId: 1,
     FirstName: "Sam",
     LastName: "Wilson",
@@ -32,9 +33,12 @@ const verificationJSON = [
     PointsToClaim: 10,
     ClaimDate: "2021-04-24T13:49:51.141Z",
     Status: VerificationStatusEnum.Approved,
+    Remarks: "",
+    DateOfVerification: "2021-04-25T13:49:51.141Z",
   },
 
   {
+    ClaimId: "e9a313e4-b2ba-4131-a281-79b9553f510d",
     EmpId: 2,
     FirstName: "James",
     LastName: "Rhodes",
@@ -65,9 +69,12 @@ const verificationJSON = [
     PointsToClaim: 10,
     ClaimDate: "2021-04-24T12:49:51.141Z",
     Status: VerificationStatusEnum.Pending,
+    Remarks: "",
+    DateOfVerification: null,
   },
 
   {
+    ClaimId: "936557ce-f17a-443e-9844-ef5c9104dd56",
     EmpId: 3,
     FirstName: "Peter",
     LastName: "Parker",
@@ -98,9 +105,12 @@ const verificationJSON = [
     PointsToClaim: 10,
     ClaimDate: "2021-04-24T15:49:51.141Z",
     Status: VerificationStatusEnum.Approved,
+    Remarks: "",
+    DateOfVerification: "2021-04-25T15:49:51.141Z",
   },
 
   {
+    ClaimId: "c3008ca8-be42-4883-9b70-1ff97db80b51",
     EmpId: 4,
     FirstName: "Bruce",
     LastName: "Banner",
@@ -130,9 +140,12 @@ const verificationJSON = [
     PointsToClaim: 10,
     ClaimDate: "2021-04-24T14:49:51.141Z",
     Status: VerificationStatusEnum.Pending,
+    Remarks: "",
+    DateOfVerification: null,
   },
 
   {
+    ClaimId: "970016ce-d2c0-480d-b4e7-76ddb4d7422a",
     EmpId: 5,
     FirstName: "Stepehen",
     LastName: "Strange",
@@ -163,5 +176,7 @@ const verificationJSON = [
     PointsToClaim: 10,
     ClaimDate: "2021-04-24T12:49:51.141Z",
     Status: VerificationStatusEnum.Rejected,
+    Remarks: "",
+    DateOfVerification: "2021-04-25T12:49:51.141Z",
   },
 ];

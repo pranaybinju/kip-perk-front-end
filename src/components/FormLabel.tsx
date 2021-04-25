@@ -5,7 +5,7 @@ interface FormLabelProps
   > {}
 const FormLabel = (props: FormLabelProps) => {
   return (
-    <label className="block" {...props}>
+    <label className={`block text-black ${props.className}`} {...props}>
       {props.children}
     </label>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 
 export const TabPanel = ({ children, color }: any) => {
-  const [openTab, setOpenTab] = React.useState(1);
+  const [openTab, setOpenTab] = React.useState(0);
   return (
     <>
       <div className="flex flex-wrap">
@@ -22,7 +22,6 @@ export const TabPanel = ({ children, color }: any) => {
 };
 
 export const TabHeader = (props: any) => {
-  console.log(props);
   return (
     <ul
       className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
@@ -56,8 +55,8 @@ export const TabBody = (props: any) => (
   <div
     className={`relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded`}
   >
-    <div className={`px-4 py-5 max-w-xl ${props.className}`}>
-      <div className={`tab-content tab-space max-w-xl ${props.className}`}>
+    <div className={`px-4 py-5 w-full ${props.className}`}>
+      <div className={`tab-content tab-space  w-full ${props.className}`}>
         {React.Children.map(props.children, (child, index) =>
           index === props.openTab
             ? React.cloneElement(child, {
