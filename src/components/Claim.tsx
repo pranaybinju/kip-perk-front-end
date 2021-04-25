@@ -38,7 +38,7 @@ function Claim() {
 
       <div className="my-5 text-sm">
         <input type="checkbox" id="agreement" />
-        <label htmlFor="agreement" className="ml-2">I hereby declare that the following submission is best to my knowledge</label>
+        <label htmlFor="agreement" className="ml-2">I hereby declare that the following submission is best to my knowledge.</label>
       </div>
 
       <button className="border border-primary rounded-md self-center text-center p-2 duration-300 text-primary  hover:bg-primary hover:text-white w-20">
