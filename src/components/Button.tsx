@@ -1,4 +1,4 @@
-interface ButtonProps
+export interface ButtonProps
   extends React.DetailedHTMLProps<
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
@@ -34,7 +34,7 @@ const Button = (props: ButtonProps) => {
   }
   return (
     <button
-      className={`rounded-md text-center p-2  w-20 ${props.className} ${className}`}
+      className={`rounded-md text-center p-2  w-20 ${className} ${props.className}`}
       {...props}
     >
       {props.children}

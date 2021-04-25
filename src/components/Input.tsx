@@ -1,4 +1,4 @@
-import { forwardRef, MutableRefObject } from "react";
+import { forwardRef } from "react";
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
 
 const Input = forwardRef((props: InputProps, ref: any) => {

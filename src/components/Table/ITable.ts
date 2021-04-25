@@ -42,10 +42,24 @@ export type TableProps<D extends object = {}> = {
   isLoading?: boolean;
 };
 export type ControlledTableProps<D extends object = {}> = TableProps<D> & {
-  fetchData: (data: {
+  fetchData?: (data: {
     pageIndex: number;
     pageSize: number;
     sortBy?: { id: string; desc: true }[];
   }) => void;
-  pageCount: number;
+  pageCount?: number;
+};
+
+export type PaginationProps = {
+  pageIndex: number;
+  pageSize?: number;
+  pageOptions: number[];
+  setPageSize?: (size: number) => void;
+  canPreviousPage: boolean;
+  previousPage: () => void;
+  canNextPage: boolean;
+  nextPage: () => void;
+  pageCount?: number;
+  gotoPage?: (page: number) => void;
+  isLoading?: boolean;
 };
