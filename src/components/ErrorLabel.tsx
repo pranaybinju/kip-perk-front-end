@@ -5,7 +5,7 @@ interface ErrorLabelProps
   > {}
 const ErrorLabel = (props: ErrorLabelProps) => {
   return (
-    <label className={`block ${props.className} text-red-400`} {...props}>
+    <label className={`block ${props.className} mt-1 text-red-600`} {...props}>
       {props.children}
     </label>
   );

@@ -32,7 +32,9 @@ const VerificationForm = ({ type, claimToVerify }: any) => {
                 className="border border-gray-500 rounded-md px-4 py-3 mt-3 focus:outline-none w-full h-20"
                 placeholder="Enter Reason"
               />
-              {errors && <ErrorLabel>{errors.message}</ErrorLabel>}
+              {errors.reason && (
+                <ErrorLabel>{errors.reason.message}</ErrorLabel>
+              )}
             </>
           )}
 
@@ -52,7 +54,7 @@ const VerificationForm = ({ type, claimToVerify }: any) => {
                 className="border border-gray-500 rounded-md px-4 py-3 mt-3 focus:outline-none w-full h-20"
                 placeholder="Enter Notes"
               />
-              {errors && <ErrorLabel>{errors.message}</ErrorLabel>}
+              {errors.note && <ErrorLabel>{errors.note.message}</ErrorLabel>}
             </>
           )}
         </Container>
@@ -64,7 +66,7 @@ const VerificationForm = ({ type, claimToVerify }: any) => {
           name="witnesses"
           control={control}
           rules={{
-            validate: (val) => val.length < 2 || "Please select Peers",
+            validate: (val) => val.length === 2 || "Please select Peers",
           }}
           as={
             <CheckboxGroup>
@@ -79,6 +81,9 @@ const VerificationForm = ({ type, claimToVerify }: any) => {
             </CheckboxGroup>
           }
         />
+        {errors.witnesses && (
+          <ErrorLabel>{errors.witnesses.message}</ErrorLabel>
+        )}
       </form>
     </Container>
   );

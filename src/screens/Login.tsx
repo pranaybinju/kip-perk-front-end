@@ -74,7 +74,9 @@ function Login() {
                 className="border border-gray-500 rounded-md px-4 py-3 mt-3 focus:outline-none w-full"
                 placeholder="UserName"
               />
-              {errors && <ErrorLabel>{errors.message}</ErrorLabel>}
+              {errors.UserName && (
+                <ErrorLabel>{errors.UserName.message}</ErrorLabel>
+              )}
             </Container>
 
             <Container className="my-5 text-sm">
@@ -95,7 +97,9 @@ function Login() {
                 placeholder="Password"
               />
 
-              {errors && <ErrorLabel>{errors.message}</ErrorLabel>}
+              {errors.Password && (
+                <ErrorLabel>{errors.Password.message}</ErrorLabel>
+              )}
               <Container className="flex justify-end mt-2 text-xs">
                 <Link to="/reset">
                   <Text className="text-primary">{"Forgot Password?"}</Text>

@@ -53,7 +53,7 @@ function Verifications() {
       {
         Header: "Date Of Claim",
         accessor: ({ ClaimDate }: any) => (
-          <Text>{`${dayjs(ClaimDate).format("ll")}`}</Text>
+          <Text>{`${dayjs(ClaimDate).format("DD/MM/YYYY")}`}</Text>
         ),
       },
       {
@@ -123,14 +123,14 @@ function Verifications() {
       {
         Header: "Date Of Claim",
         accessor: ({ ClaimDate }: any) => (
-          <Text>{`${dayjs(ClaimDate).format("ll")}`}</Text>
+          <Text>{`${dayjs(ClaimDate).format("DD/MM/YYYY")}`}</Text>
         ),
       },
 
       {
         Header: "Date Of Verification",
         accessor: ({ DateOfVerification }: any) => (
-          <Text>{`${dayjs(DateOfVerification).format("ll")}`}</Text>
+          <Text>{`${dayjs(DateOfVerification).format("DD/MM/YYYY")}`}</Text>
         ),
       },
 
