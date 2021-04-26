@@ -9,6 +9,8 @@ import Image from "../components/Image";
 import Heading from "../components/Heading";
 import Input from "../components/Input";
 import FormLabel from "../components/FormLabel";
+
+import ErrorLabel from "../components/ErrorLabel";
 import Text from "../components/Text";
 import Gift from "../assets/undraw_gift1.svg";
 import React, { useCallback } from "react";
@@ -61,7 +63,10 @@ function Login() {
               <Input
                 type="text"
                 ref={register({
-                  required: true,
+                  required: {
+                    value: true,
+                    message: "Please enter Username",
+                  },
                 })}
                 autoFocus
                 id="UserName"
@@ -69,6 +74,7 @@ function Login() {
                 className="border border-gray-500 rounded-md px-4 py-3 mt-3 focus:outline-none w-full"
                 placeholder="UserName"
               />
+              {errors && <ErrorLabel>{errors.message}</ErrorLabel>}
             </Container>
 
             <Container className="my-5 text-sm">
@@ -78,13 +84,18 @@ function Login() {
               <Input
                 type="Password"
                 ref={register({
-                  required: true,
+                  required: {
+                    value: true,
+                    message: "Please enter Password",
+                  },
                 })}
                 name="Password"
                 id="Password"
                 className="border border-gray-500 rounded-md px-4 py-3 mt-3 focus:outline-none  w-full"
                 placeholder="Password"
               />
+
+              {errors && <ErrorLabel>{errors.message}</ErrorLabel>}
               <Container className="flex justify-end mt-2 text-xs">
                 <Link to="/reset">
                   <Text className="text-primary">{"Forgot Password?"}</Text>

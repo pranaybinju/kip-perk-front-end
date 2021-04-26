@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
+import dayjs from "dayjs";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import Text from "../components/Text";
@@ -51,7 +52,9 @@ function Verifications() {
       },
       {
         Header: "Date Of Claim",
-        accessor: ({ ClaimDate }: any) => <Text>{`${ClaimDate}`}</Text>,
+        accessor: ({ ClaimDate }: any) => (
+          <Text>{`${dayjs(ClaimDate).format("ll")}`}</Text>
+        ),
       },
       {
         Header: "Witnesses",
@@ -119,13 +122,15 @@ function Verifications() {
       },
       {
         Header: "Date Of Claim",
-        accessor: ({ ClaimDate }: any) => <Text>{`${ClaimDate}`}</Text>,
+        accessor: ({ ClaimDate }: any) => (
+          <Text>{`${dayjs(ClaimDate).format("ll")}`}</Text>
+        ),
       },
 
       {
         Header: "Date Of Verification",
         accessor: ({ DateOfVerification }: any) => (
-          <Text>{`${DateOfVerification}`}</Text>
+          <Text>{`${dayjs(DateOfVerification).format("ll")}`}</Text>
         ),
       },
 
@@ -183,7 +188,7 @@ function Verifications() {
             return {
               ...datum,
               Remarks: data.note,
-              DateOfVerification: "2021-04-25T12:49:51.141Z",
+              DateOfVerification: dayjs().format(),
               Status: VerificationStatusEnum.Approved,
             };
           }
@@ -204,7 +209,7 @@ function Verifications() {
             return {
               ...datum,
               Remarks: data.reason,
-              DateOfVerification: "2021-04-25T12:49:51.141Z",
+              DateOfVerification: dayjs().format(),
               Status: VerificationStatusEnum.Rejected,
             };
           }
