@@ -12,7 +12,7 @@ import {
   Claim,
   Home,
   Verify
-} from '../components';
+} from './';
 
 function Dashboard() {
   const location = useLocation();
