@@ -14,8 +14,7 @@ import VerificationForm from "../components/VerificationForm";
 import useVisibilityToggler from "../hooks/useVisibilityToggler";
 import { verificationJSON } from "../data/verification";
 import { ClaimEnum, VerificationStatusEnum } from "../data/enum";
-import { FcCheckmark } from "react-icons/fc";
-import { RiCloseFill } from "react-icons/ri";
+import { CheckIcon, XIcon } from "@heroicons/react/solid";
 
 function Verify() {
   const [claimToVerify, setClaimToVerify] = useState<any>(null);
@@ -85,7 +84,7 @@ function Verify() {
                     openRejectForm();
                   }}
                   className={`mr-2 first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-transparent bg-white`}
-                  icon={<RiCloseFill fill="red" size="1.5rem" />}
+                  icon={<XIcon className="h-5 w-5 text-red-500" />}
                 ></IconButton>
                 <IconButton
                   onClick={() => {
@@ -93,7 +92,7 @@ function Verify() {
                     openApproveForm();
                   }}
                   className={`first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-transparent bg-white`}
-                  icon={<FcCheckmark size="1.5rem" />}
+                  icon={<CheckIcon className="h-5 w-5 text-green-500" />}
                 ></IconButton>
               </Container>
             </Container>
