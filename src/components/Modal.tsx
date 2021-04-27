@@ -1,5 +1,8 @@
-import Container from "../components/Container";
-import Button from "../components/Button";
+import {
+  Container,
+  Button
+} from "./";
+
 export default function Modal({
   isOpen,
   hideModal,

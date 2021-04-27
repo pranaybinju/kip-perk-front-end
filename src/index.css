@@ -24,3 +24,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* React Select */
+
+.react-select__control {
+  @apply px-2 py-1 mt-3;
+  @apply rounded-md border-gray-500 !important;
+}
+
+.react-select__indicator {
+  @apply text-gray-500 !important;
+}
+
+.react-select__indicator-separator {
+  @apply bg-gray-500 !important;
+}

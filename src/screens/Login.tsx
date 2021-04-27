@@ -3,15 +3,17 @@ import { Link, useHistory } from "react-router-dom";
 import { useUserContext } from "../contexts/userContext";
 
 import { useForm } from "react-hook-form";
-import Container from "../components/Container";
-import Button from "../components/Button";
-import Image from "../components/Image";
-import Heading from "../components/Heading";
-import Input from "../components/Input";
-import FormLabel from "../components/FormLabel";
+import {
+  Container,
+  Button,
+  Image,
+  Heading,
+  Input,
+  FormLabel,
+  ErrorLabel,
+  Text
+} from "../components"
 
-import ErrorLabel from "../components/ErrorLabel";
-import Text from "../components/Text";
 import Gift from "../assets/undraw_gift1.svg";
 import React, { useCallback } from "react";
 import { userJSON } from "../data/users";

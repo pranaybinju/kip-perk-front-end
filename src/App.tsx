@@ -5,15 +5,18 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+
+import {
+  Login,
+  Register,
+  Dashboard,
+  PrivateRoute
+} from "./screens";
+import { Container } from "./components";
 import { UserContext } from "./contexts/userContext";
-import PrivateRoute from "./screens/PrivateRoute";
-import Login from "./screens/Login";
-import Verifications from "./screens/Verifications";
-import Home from "./screens/home";
-import Register from "./screens/Register";
-import Container from "./components/Container";
 import LocalStorageService from "./utils/localstorage";
 
+// TODO: Route to be made private based on permissions
 function App() {
   const [loggedInUser, setCurrentUser] = useState(
     LocalStorageService.readItem("loggedInUser")
@@ -24,7 +27,7 @@ function App() {
     setCurrentUser,
   ]);
   return (
-    <Container className="text-primary bg-secondary h-full  overflow-auto">
+    <Container className="text-primary bg-secondary h-full overflow-auto">
       <UserContext.Provider value={userProvider}>
         <Router>
           <Switch>
@@ -35,12 +38,13 @@ function App() {
             <Route exact path="/register">
               <Register />
             </Route>
-            <PrivateRoute
-              component={Verifications}
-              exact
-              path="/verify"
-            ></PrivateRoute>
-            <PrivateRoute component={Home} path="/"></PrivateRoute>
+
+            <Route path="/">
+              <Dashboard />
+            </Route>
+
+            <PrivateRoute component={Dashboard} path="/"></PrivateRoute>
+
             <Redirect to={{ pathname: "/login" }} />
           </Switch>
         </Router>

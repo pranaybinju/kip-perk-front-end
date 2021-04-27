@@ -1,4 +1,4 @@
-import { FcNext, FcPrevious } from "react-icons/fc";
+import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/solid";
 import IconButton from "../IconButton";
 import { PaginationProps } from "./ITable";
 
@@ -20,7 +20,7 @@ const Pagination = ({
               className={`first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-pink-500 bg-white text-pink-500 ${
                 !canPreviousPage ? "opacity-30 " : ""
               } `}
-              icon={<FcPrevious />}
+              icon={<ChevronLeftIcon className="h-5 w-5" />}
             ></IconButton>
           </li>
 
@@ -31,7 +31,7 @@ const Pagination = ({
               className={`first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-pink-500 bg-white text-pink-500  ${
                 !canNextPage ? "opacity-30 " : ""
               } `}
-              icon={<FcNext />}
+              icon={<ChevronRightIcon className="h-5 w-5" />}
             ></IconButton>
           </li>
         </ul>
