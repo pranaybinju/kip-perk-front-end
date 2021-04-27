@@ -28,7 +28,10 @@ export const TabHeader = (props: any) => {
       role="tablist"
     >
       {React.Children.map(props.children, (child, index) => (
-        <li key={index} className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+        <li
+          key={index}
+          className="mb-2 mr-2 last:mr-0 flex-50 md:flex-auto w-full md:w-auto text-center"
+        >
           <a
             className={
               "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +

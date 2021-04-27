@@ -13,6 +13,7 @@ import {
   Home,
   Verify
 } from './';
+import PrivateRoute from "./PrivateRoute";
 
 function Dashboard() {
   const location = useLocation();
@@ -43,9 +44,11 @@ function Dashboard() {
             <Claim />
           </Route>
 
-          <Route path="/verify">
-            <Verify />
-          </Route>
+          <PrivateRoute
+            component={Verify}
+            exact
+            path="/verify"
+          ></PrivateRoute>
 
           <Route path="/">
             <Home />

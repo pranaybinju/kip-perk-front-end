@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,27 +12,43 @@ import {
   Dashboard
 } from "./screens";
 import { Container } from "./components";
+import { UserContext } from "./contexts/userContext";
+import PrivateRoute from "./screens/PrivateRoute";
+import LocalStorageService from "./utils/localstorage";
 
 // TODO: Route to be made private based on permissions
 function App() {
+  const [loggedInUser, setCurrentUser] = useState(
+    LocalStorageService.readItem("loggedInUser")
+  );
+
+  const userProvider = useMemo(() => ({ loggedInUser, setCurrentUser }), [
+    loggedInUser,
+    setCurrentUser,
+  ]);
   return (
     <Container className="text-primary bg-secondary h-full overflow-auto">
-      <Router>
-        <Switch>
-          <Route exact path="/login">
-            <Login />
-          </Route>
+      <UserContext.Provider value={userProvider}>
+        <Router>
+          <Switch>
+            <Route exact path="/login">
+              <Login />
+            </Route>
 
-          <Route exact path="/register">
-            <Register />
-          </Route>
+            <Route exact path="/register">
+              <Register />
+            </Route>
 
-          <Route path="/">
-            <Dashboard />
-          </Route>
-          <Redirect to={{ pathname: "/" }} />
-        </Switch>
-      </Router>
+            <Route path="/">
+              <Dashboard />
+            </Route>
+
+            <PrivateRoute component={Dashboard} path="/"></PrivateRoute>
+
+            <Redirect to={{ pathname: "/login" }} />
+          </Switch>
+        </Router>
+      </UserContext.Provider>
     </Container>
   );
 }
