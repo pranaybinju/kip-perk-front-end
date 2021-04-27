@@ -1,25 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useMemo } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
+import {
+  Login,
+  Register,
+  Dashboard,
+  PrivateRoute
+} from "./screens";
+import { Container } from "./components";
+import { UserContext } from "./contexts/userContext";
+import LocalStorageService from "./utils/localstorage";
+
+// TODO: Route to be made private based on permissions
 function App() {
+  const [loggedInUser, setCurrentUser] = useState(
+    LocalStorageService.readItem("loggedInUser")
+  );
+
+  const userProvider = useMemo(() => ({ loggedInUser, setCurrentUser }), [
+    loggedInUser,
+    setCurrentUser,
+  ]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="text-primary bg-secondary h-full overflow-auto">
+      <UserContext.Provider value={userProvider}>
+        <Router>
+          <Switch>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+
+            <Route exact path="/register">
+              <Register />
+            </Route>
+
+            <Route path="/">
+              <Dashboard />
+            </Route>
+
+            <PrivateRoute component={Dashboard} path="/"></PrivateRoute>
+
+            <Redirect to={{ pathname: "/login" }} />
+          </Switch>
+        </Router>
+      </UserContext.Provider>
+    </Container>
   );
 }
 
