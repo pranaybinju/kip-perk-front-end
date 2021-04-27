@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import Container from "../components/Container";
-import Button from "../components/Button";
-import Heading from "../components/Heading";
-import Input from "../components/Input";
-import FormLabel from "../components/FormLabel";
-import Text from "../components/Text";
+import {
+  Container,
+  Button,
+  Heading,
+  Input,
+  FormLabel,
+  Text
+} from "../components";
 
 function Register() {
   const { register, errors } = useForm();

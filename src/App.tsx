@@ -9,11 +9,11 @@ import {
 import {
   Login,
   Register,
-  Dashboard
+  Dashboard,
+  PrivateRoute
 } from "./screens";
 import { Container } from "./components";
 import { UserContext } from "./contexts/userContext";
-import PrivateRoute from "./screens/PrivateRoute";
 import LocalStorageService from "./utils/localstorage";
 
 // TODO: Route to be made private based on permissions

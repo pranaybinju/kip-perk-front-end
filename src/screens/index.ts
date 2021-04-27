@@ -5,6 +5,7 @@ import Home from "./Home";
 import Dashboard from "./Dashboard";
 import Claim from "./Claim";
 import Verify from "./Verify";
+import PrivateRoute from "./PrivateRoute";
 
 export {
   Login,
@@ -13,5 +14,6 @@ export {
   Home,
   Dashboard,
   Claim,
-  Verify
+  Verify,
+  PrivateRoute
 };

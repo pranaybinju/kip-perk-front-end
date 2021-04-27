@@ -10,6 +10,8 @@ import Tag from './Tag';
 import Text from './Text';
 import Textarea from './Textarea';
 import VerificationForm from './VerificationForm';
+import ErrorLabel from './ErrorLabel';
+import Table from './Table';
 
 export {
   Button,
@@ -23,5 +25,7 @@ export {
   Tag,
   Text,
   Textarea,
-  VerificationForm
+  VerificationForm,
+  ErrorLabel,
+  Table
 };

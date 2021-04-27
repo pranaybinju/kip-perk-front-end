@@ -2,16 +2,17 @@ import { useCallback, useMemo, useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
-import Container from "../components/Container";
-import Text from "../components/Text";
-
-import Table from "../components/Table";
-import Button from "../components/Button";
-import IconButton from "../components/IconButton";
+import {
+  Container,
+  Text,
+  Table,
+  Button,
+  IconButton,
+  Modal,
+  Tag,
+  VerificationForm
+} from "../components";
 import { TabPanel, TabBody, TabHeader } from "../components/TabComponent";
-import Modal from "../components/Modal";
-import Tag from "../components/Tag";
-import VerificationForm from "../components/VerificationForm";
 import useVisibilityToggler from "../hooks/useVisibilityToggler";
 import { verificationJSON } from "../data/verification";
 import { ClaimEnum, VerificationStatusEnum } from "../data/enum";
