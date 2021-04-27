@@ -2,6 +2,8 @@ import { Controller, useFormContext } from "react-hook-form";
 import Container from "../components/Container";
 import Textarea from "../components/Textarea";
 import FormLabel from "../components/FormLabel";
+import ErrorLabel from "../components/ErrorLabel";
+
 import { CheckboxGroup, Checkbox } from "../components/Checkbox/CheckboxGroup";
 import { useCallback } from "react";
 
@@ -21,12 +23,18 @@ const VerificationForm = ({ type, claimToVerify }: any) => {
                 name="reason"
                 autoFocus
                 ref={register({
-                  required: true,
+                  required: {
+                    value: true,
+                    message: "Please enter reason for rejection",
+                  },
                 })}
                 id="reason"
                 className="border border-gray-500 rounded-md px-4 py-3 mt-3 focus:outline-none w-full h-20"
                 placeholder="Enter Reason"
               />
+              {errors.reason && (
+                <ErrorLabel>{errors.reason.message}</ErrorLabel>
+              )}
             </>
           )}
 
@@ -36,23 +44,30 @@ const VerificationForm = ({ type, claimToVerify }: any) => {
               <Textarea
                 name="note"
                 ref={register({
-                  required: true,
+                  required: {
+                    value: true,
+                    message: "Please enter a note",
+                  },
                 })}
                 autoFocus
                 id="note"
                 className="border border-gray-500 rounded-md px-4 py-3 mt-3 focus:outline-none w-full h-20"
                 placeholder="Enter Notes"
               />
+              {errors.note && <ErrorLabel>{errors.note.message}</ErrorLabel>}
             </>
           )}
         </Container>
 
         <FormLabel htmlFor="username" className="block text-black">
-          {`Acknowledged by:`}
+          {`Acknowledged by Peers:`}
         </FormLabel>
         <Controller
           name="witnesses"
           control={control}
+          rules={{
+            validate: (val) => val.length === 2 || "Please select Peers",
+          }}
           as={
             <CheckboxGroup>
               {claimToVerify?.Witnesses.map((witness: any) => (
@@ -66,6 +81,9 @@ const VerificationForm = ({ type, claimToVerify }: any) => {
             </CheckboxGroup>
           }
         />
+        {errors.witnesses && (
+          <ErrorLabel>{errors.witnesses.message}</ErrorLabel>
+        )}
       </form>
     </Container>
   );
