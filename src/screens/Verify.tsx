@@ -10,7 +10,7 @@ import {
   IconButton,
   Modal,
   Tag,
-  VerificationForm
+  VerificationForm,
 } from "../components";
 import { TabPanel, TabBody, TabHeader } from "../components/TabComponent";
 import useVisibilityToggler from "../hooks/useVisibilityToggler";
@@ -231,7 +231,7 @@ function Verify() {
           <Text>{"Approved"}</Text>
           <Text>{"Rejected"}</Text>
         </TabHeader>
-        <TabBody>
+        <TabBody className="px-0 py-0">
           <Container>
             <Container className="text-black  flex justify-center items-start">
               <Table columns={columnsAll} data={verificationData} />

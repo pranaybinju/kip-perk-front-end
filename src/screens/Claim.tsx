@@ -1,50 +1,106 @@
-import React from 'react';
-import Select from 'react-select';
+import React, { useMemo } from "react";
+import { useUserContext } from "../contexts/userContext";
+import Select from "react-select";
+import {
+  Container,
+  Button,
+  Image,
+  Heading,
+  Input,
+  FormLabel,
+  ErrorLabel,
+  Text,
+  Textarea,
+} from "../components";
+import { RadioButtonGroup, RadioButton } from "../components/Radio/RadioButton";
+import { Checkbox, CheckboxGroup } from "../components/Checkbox/CheckboxGroup";
 
+import { ClaimEnum } from "../data/enum";
+import { userJSON } from "../data/users";
 function Claim() {
+  const { loggedInUser } = useUserContext();
+
+  const peerOptions = useMemo(
+    () =>
+      userJSON
+        .map((user: any) => {
+          return {
+            ...user,
+            label: `${user.FirstName} ${user.LastName}`,
+            value: user.EmpId,
+          };
+        })
+        .filter((mappedUser: any) => mappedUser.EmpId !== loggedInUser.EmpId),
+
+    []
+  );
+
+  const claimOptions = useMemo(
+    () =>
+      loggedInUser?.Claims.map((claim: any) => {
+        return {
+          label: ClaimEnum[claim],
+          value: claim,
+        };
+      }),
+
+    []
+  );
   return (
-    <form className="w-8/12 mx-auto bg-white py-8 px-8 rounded-md shadow-md">
-      <div className="my-5 text-sm">
-        <label htmlFor="type" className="block">
+    <form className="w-8/12 align-start  justify-start text-black  px-8 rounded-md ">
+      <Container className=" md:w-4/12 mt-2 text-md">
+        <FormLabel htmlFor="type" className="block">
           Type
-        </label>
-        <select autoFocus id="type" className="border border-gray-500 rounded-md px-4 py-3 mt-3 focus:outline-none w-full" placeholder="Type">
-          <option>Hiring</option>
-          <option>COE</option>
-          <option>KFC</option>
-        </select>
-      </div>
+        </FormLabel>
+        <Select
+          options={claimOptions}
+          classNamePrefix="react-select"
+          placeholder="Select Claim Type"
+        />
+      </Container>
 
-      <div className="my-5 text-sm">
-        <label htmlFor="date" className="block">
+      <Container className="my-2 text-md">
+        <FormLabel htmlFor="date" className="block">
           Date
-        </label>
-        <input type="date" id="date" className="border border-gray-500 rounded-md px-4 py-3 mt-3 focus:outline-none w-full" />
-      </div>
+        </FormLabel>
+        <Input
+          type="date"
+          id="date"
+          className="border border-gray-500 rounded-md px-4 py-3 mt-3 focus:outline-none w-4/12"
+        />
+      </Container>
 
-      <div className="my-5 text-sm">
-        <label htmlFor="date" className="block">
+      <Container className=" md:w-8/12 my-2 text-md">
+        <FormLabel htmlFor="date" className="block">
           Peers
-        </label>
-        <Select options={[{ value: 'toby-flenderson', label: 'Toby Flenderson' }, { value: 'stanley-hudson', label: 'Stanley Hudson' }, { value: 'pam-beesly', label: 'Pam Beesly' }]} isMulti classNamePrefix="react-select" placeholder="Select min 2 peers..." />
-      </div>
+        </FormLabel>
+        <Select
+          options={peerOptions}
+          isMulti
+          classNamePrefix="react-select"
+          placeholder="Select min 2 peers..."
+        />
+      </Container>
 
-      <div className="my-5 text-sm">
-        <label htmlFor="description" className="block">
+      <Container className="md:w-8/12 my-2 text-md">
+        <FormLabel htmlFor="description" className="block">
           Description
-        </label>
-        <textarea id="description" className="border border-gray-500 rounded-md px-4 py-3 mt-3 focus:outline-none w-full" />
-      </div>
+        </FormLabel>
+        <Textarea
+          id="description"
+          className="border border-gray-500 rounded-md px-4 py-3 mt-3 focus:outline-none w-full"
+        />
+      </Container>
 
-      <div className="my-5 text-sm">
-        <input type="checkbox" id="agreement" />
-        <label htmlFor="agreement" className="ml-2">I hereby declare that the following submission is best to my knowledge.</label>
-      </div>
-
-      <button className="border border-primary rounded-md self-center text-center p-2 duration-300 text-primary  hover:bg-primary hover:text-white w-20">
-        Submit
-      </button>
-
+      <CheckboxGroup>
+        <Checkbox
+          className="text-black"
+          label={`I hereby declare that the following submission is best to my
+          knowledge.`}
+          name={`agreement`}
+        ></Checkbox>
+      </CheckboxGroup>
+      <Button type="submit">{"Submit"}</Button>
     </form>
   );
 }

@@ -13,7 +13,7 @@ const PrivateRoute = ({
   ...rest
 }: PrivateRouteProps) => {
   const { loggedInUser } = useUserContext();
-  console.log(loggedInUser);
+
   return (
     <>
       <Route

@@ -6,7 +6,7 @@ export const userJSON = [
     LastName: "Wilson",
     Email: "sam.wilson@kiprosh.com",
     Claims: [ClaimEnum.Hiring, ClaimEnum.KFC],
-    ImageURL: "",
+    ImageURL: "https://unsplash.com/photos/mm5hzUbW65g",
     TotalPoints: 10,
     UserName: "sam",
     Password: "sam123",
