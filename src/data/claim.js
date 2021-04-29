@@ -19,7 +19,8 @@ export const claims = [
     Email: "james.rhodes@kiprosh.com",
     Claims: [ClaimEnum.COE],
     ClaimDate: "2020-10-08T13:49:51.141Z",
-    ImageURL: "",
+    ImageURL:
+      "https://images.unsplash.com/photo-1560574188-6a6774965120?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
     PointsClaimed: 10,
     TotalPoints: 20,
   },
@@ -31,7 +32,8 @@ export const claims = [
     Email: "peter.parker@kiprosh.com",
     Claims: [ClaimEnum.KFC, ClaimEnum.COE],
     ClaimDate: "2020-12-10T13:49:51.141Z",
-    ImageURL: "",
+    ImageURL:
+      "https://images.unsplash.com/photo-1568890724546-a0ad828fd94d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1151&q=80",
     PointsClaimed: 10,
     TotalPoints: 30,
   },
@@ -43,7 +45,8 @@ export const claims = [
     Email: "bruce.banner@kiprosh.com",
     Claims: [ClaimEnum.COE, ClaimEnum.KFC],
     ClaimDate: "2020-11-10T13:49:51.141Z",
-    ImageURL: "",
+    ImageURL:
+      "https://images.unsplash.com/photo-1591635595585-292ea5806cc3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80",
     PointsClaimed: 10,
     TotalPoints: 10,
   },
@@ -55,7 +58,8 @@ export const claims = [
     Email: "stephen.strange@kiprosh.com",
     Claims: [ClaimEnum.Hiring, ClaimEnum.COE],
     ClaimDate: "2020-09-10T13:49:51.141Z",
-    ImageURL: "",
+    ImageURL:
+      "https://images.unsplash.com/photo-1617978441921-29f82b7aee2b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
     PointsClaimed: 10,
     TotalPoints: 30,
   },
@@ -67,7 +71,8 @@ export const claims = [
     Email: "natasha.romanoff@kiprosh.com",
     Claims: [ClaimEnum.COE],
     ClaimDate: "2020-12-11T13:49:51.141Z",
-    ImageURL: "",
+    ImageURL:
+      "https://images.unsplash.com/photo-1598979845155-d8a32bbbcaf3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
     PointsClaimed: 10,
     TotalPoints: 40,
   },
@@ -79,7 +84,8 @@ export const claims = [
     Email: "tony.stark@kiprosh.com",
     Claims: [ClaimEnum.KFC, ClaimEnum.COE],
     ClaimDate: "2020-12-16T13:49:51.141Z",
-    ImageURL: "",
+    ImageURL:
+      "https://images.unsplash.com/photo-1594463750939-ebb28c3f7f75?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
     PointsClaimed: 10,
     TotalPoints: 90,
   },
@@ -91,7 +97,8 @@ export const claims = [
     Email: "steve.rogersnt@kiprosh.com",
     Claims: [ClaimEnum.COE],
     ClaimDate: "2020-12-12T13:49:51.141Z",
-    ImageURL: "",
+    ImageURL:
+      "https://images.unsplash.com/photo-1464660756002-dd9f9a92b01b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1034&q=80",
     PointsClaimed: 10,
     TotalPoints: 80,
   },
@@ -103,7 +110,8 @@ export const claims = [
     Email: "nick.fury@kiprosh.com",
     Claims: [ClaimEnum.Hiring],
     ClaimDate: "2020-10-10T13:49:51.141Z",
-    ImageURL: "",
+    ImageURL:
+      "https://images.unsplash.com/photo-1526632623135-890fa91651e4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     PointsClaimed: 10,
     TotalPoints: 50,
   },
@@ -115,7 +123,8 @@ export const claims = [
     Email: "carol.denvers@kiprosh.com",
     Claims: [ClaimEnum.Hiring, ClaimEnum.COE],
     ClaimDate: "2020-12-10T13:49:51.141Z",
-    ImageURL: "",
+    ImageURL:
+      "https://images.unsplash.com/photo-1592438224611-fa028bc2c22c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
     PointsClaimed: 10,
     TotalPoints: 30,
   },
