@@ -15,6 +15,7 @@ function Home() {
         )
       : verificationJSON
   );
+  console.log(verification);
 
   return (
     <Container className="flex flex-col mx-auto p-10 w-11/12 text-gray-700">
@@ -33,7 +34,7 @@ function Home() {
             <Container className="flex flex-col ml-4">
               <Image
                 className="mx-4 rounded-full h-10 w-10 object-cover self-center"
-                src="https://images.unsplash.com/photo-1548546738-8509cb246ed3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80"
+                src={approvedVerification.ImageURL}
               />
 
               <Text className="text-3xl font-bold">{`${approvedVerification.FirstName} ${approvedVerification.LastName}`}</Text>
