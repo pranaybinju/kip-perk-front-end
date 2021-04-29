@@ -1,7 +1,4 @@
-import {
-  Container,
-  Button
-} from "./";
+import { Container, Button } from "./";
 
 export default function Modal({
   isOpen,
@@ -20,7 +17,9 @@ export default function Modal({
               <Container className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
                 <Container className="flex items-start justify-between p-lg border-b border-solid border-blueGray-200 rounded-t">
-                  <h4 className="text-3xl font-semibold">{title}</h4>
+                  <h4 className="text-3xl font-semibold text-primary">
+                    {title}
+                  </h4>
                   <Button
                     className="p-1 ml-auto  border-0 text-black  float-right text-2xl leading-none font-semibold outline-none focus:outline-none"
                     onClick={hideModal}

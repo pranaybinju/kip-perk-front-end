@@ -6,12 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import {
-  Login,
-  Register,
-  Dashboard,
-  PrivateRoute
-} from "./screens";
+import { Login, Register, Dashboard, PrivateRoute } from "./screens";
 import { Container } from "./components";
 import { UserContext } from "./contexts/userContext";
 import LocalStorageService from "./utils/localstorage";
@@ -20,6 +15,11 @@ import LocalStorageService from "./utils/localstorage";
 function App() {
   const [loggedInUser, setCurrentUser] = useState(
     LocalStorageService.readItem("loggedInUser")
+      ? JSON.parse(
+          //@ts-ignore
+          LocalStorageService.readItem("loggedInUser")
+        )
+      : null
   );
 
   const userProvider = useMemo(() => ({ loggedInUser, setCurrentUser }), [
@@ -27,7 +27,7 @@ function App() {
     setCurrentUser,
   ]);
   return (
-    <Container className="text-primary bg-secondary h-full overflow-auto">
+    <Container className="bg-secondary h-full overflow-auto">
       <UserContext.Provider value={userProvider}>
         <Router>
           <Switch>

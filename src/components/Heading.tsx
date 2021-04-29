@@ -6,7 +6,7 @@ interface HeadingProps
 
 const Heading = (props: HeadingProps) => {
   return (
-    <h1 className="font-medium text-2xl " {...props}>
+    <h1 className={`font-medium text-2xl ${props.className}`}>
       {props.children}
     </h1>
   );

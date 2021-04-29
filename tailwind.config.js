@@ -103,6 +103,12 @@ module.exports = {
         25: "22%",
         50: "43%",
       },
+      height: {
+        "screen/2": "50vh",
+        "screen/4": "25vh",
+        "screen-10": "10vh",
+        "screen-90": "90vh",
+      },
     },
   },
   variants: {

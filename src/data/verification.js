@@ -2,49 +2,14 @@ import { ClaimEnum, VerificationStatusEnum } from "./enum";
 
 export const verificationJSON = [
   {
-    ClaimId: "5c055362-59b7-460d-9f1b-255b2f5032ab",
-    EmpId: 1,
-    FirstName: "Sam",
-    LastName: "Wilson",
-    Email: "sam.wilson@kiprosh.com",
-    ClaimFor: ClaimEnum.Hiring,
-    ImageURL: "",
-    Witnesses: [
-      {
-        EmpId: 10,
-        FirstName: "Carol",
-        LastName: "Denvers",
-        Email: "carol.denvers@kiprosh.com",
-        Claims: [ClaimEnum.Hiring, ClaimEnum.COE],
-        ImageURL: "",
-        TotalPoints: 30,
-      },
-
-      {
-        EmpId: 5,
-        FirstName: "Stepehen",
-        LastName: "Strange",
-        Email: "stephen.strange@kiprosh.com",
-        Claims: [ClaimEnum.Hiring, ClaimEnum.COE],
-        ImageURL: "",
-        TotalPoints: 30,
-      },
-    ],
-    PointsToClaim: 10,
-    ClaimDate: "2021-04-24T13:49:51.141Z",
-    Status: VerificationStatusEnum.Approved,
-    Remarks: "",
-    DateOfVerification: "2021-04-25T13:49:51.141Z",
-  },
-
-  {
     ClaimId: "e9a313e4-b2ba-4131-a281-79b9553f510d",
     EmpId: 2,
     FirstName: "James",
     LastName: "Rhodes",
     Email: "james.rhodes@kiprosh.com",
     ClaimFor: ClaimEnum.COE,
-    ImageURL: "",
+    ImageURL:
+      "https://images.unsplash.com/photo-1560574188-6a6774965120?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
     Witnesses: [
       {
         EmpId: 10,
@@ -52,7 +17,8 @@ export const verificationJSON = [
         LastName: "Denvers",
         Email: "carol.denvers@kiprosh.com",
         Claims: [ClaimEnum.Hiring, ClaimEnum.COE],
-        ImageURL: "",
+        ImageURL:
+          "https://images.unsplash.com/photo-1592438224611-fa028bc2c22c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
         TotalPoints: 30,
       },
 
@@ -62,7 +28,8 @@ export const verificationJSON = [
         LastName: "Strange",
         Email: "stephen.strange@kiprosh.com",
         Claims: [ClaimEnum.Hiring, ClaimEnum.COE],
-        ImageURL: "",
+        ImageURL:
+          "https://images.unsplash.com/photo-1617978441921-29f82b7aee2b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
         TotalPoints: 30,
       },
     ],
@@ -70,7 +37,8 @@ export const verificationJSON = [
     ClaimDate: "2021-04-24T12:49:51.141Z",
     Status: VerificationStatusEnum.Pending,
     Remarks: "",
-    DateOfVerification: null,
+    DateOfVerification: "",
+    Description: "",
   },
 
   {
@@ -80,7 +48,8 @@ export const verificationJSON = [
     LastName: "Parker",
     Email: "peter.parker@kiprosh.com",
     ClaimFor: ClaimEnum.COE,
-    ImageURL: "",
+    ImageURL:
+      "https://images.unsplash.com/photo-1568890724546-a0ad828fd94d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1151&q=80",
     Witnesses: [
       {
         EmpId: 7,
@@ -88,7 +57,8 @@ export const verificationJSON = [
         LastName: "Stark",
         Email: "tony.stark@kiprosh.com",
         Claims: [ClaimEnum.KFC, ClaimEnum.COE],
-        ImageURL: "",
+        ImageURL:
+          "https://images.unsplash.com/photo-1594463750939-ebb28c3f7f75?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
         TotalPoints: 90,
       },
 
@@ -98,7 +68,8 @@ export const verificationJSON = [
         LastName: "Strange",
         Email: "stephen.strange@kiprosh.com",
         Claims: [ClaimEnum.Hiring, ClaimEnum.COE],
-        ImageURL: "",
+        ImageURL:
+          "https://images.unsplash.com/photo-1617978441921-29f82b7aee2b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
         TotalPoints: 30,
       },
     ],
@@ -107,6 +78,7 @@ export const verificationJSON = [
     Status: VerificationStatusEnum.Approved,
     Remarks: "",
     DateOfVerification: "2021-04-25T15:49:51.141Z",
+    Description: "",
   },
 
   {
@@ -116,7 +88,8 @@ export const verificationJSON = [
     LastName: "Banner",
     Email: "bruce.banner@kiprosh.com",
     ClaimFor: ClaimEnum.KFC,
-    ImageURL: "",
+    ImageURL:
+      "https://images.unsplash.com/photo-1591635595585-292ea5806cc3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80",
     Witnesses: [
       {
         EmpId: 3,
@@ -124,7 +97,8 @@ export const verificationJSON = [
         LastName: "Parker",
         Email: "peter.parker@kiprosh.com",
         Claims: [ClaimEnum.KFC, ClaimEnum.COE],
-        ImageURL: "",
+        ImageURL:
+          "https://images.unsplash.com/photo-1568890724546-a0ad828fd94d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1151&q=80",
         TotalPoints: 30,
       },
       {
@@ -133,7 +107,8 @@ export const verificationJSON = [
         LastName: "Stark",
         Email: "tony.stark@kiprosh.com",
         Claims: [ClaimEnum.KFC, ClaimEnum.COE],
-        ImageURL: "",
+        ImageURL:
+          "https://images.unsplash.com/photo-1594463750939-ebb28c3f7f75?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
         TotalPoints: 90,
       },
     ],
@@ -141,7 +116,8 @@ export const verificationJSON = [
     ClaimDate: "2021-04-24T14:49:51.141Z",
     Status: VerificationStatusEnum.Pending,
     Remarks: "",
-    DateOfVerification: null,
+    DateOfVerification: "",
+    Description: "",
   },
 
   {
@@ -151,7 +127,8 @@ export const verificationJSON = [
     LastName: "Strange",
     Email: "stephen.strange@kiprosh.com",
     ClaimFor: ClaimEnum.COE,
-    ImageURL: "",
+    ImageURL:
+      "https://images.unsplash.com/photo-1617978441921-29f82b7aee2b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
     Witnesses: [
       {
         EmpId: 7,
@@ -159,7 +136,8 @@ export const verificationJSON = [
         LastName: "Stark",
         Email: "tony.stark@kiprosh.com",
         Claims: [ClaimEnum.KFC, ClaimEnum.COE],
-        ImageURL: "",
+        ImageURL:
+          "https://images.unsplash.com/photo-1594463750939-ebb28c3f7f75?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
         TotalPoints: 90,
       },
 
@@ -169,7 +147,8 @@ export const verificationJSON = [
         LastName: "Rogers",
         Email: "steve.rogersnt@kiprosh.com",
         Claims: [ClaimEnum.COE],
-        ImageURL: "",
+        ImageURL:
+          "https://images.unsplash.com/photo-1464660756002-dd9f9a92b01b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1034&q=80",
         TotalPoints: 80,
       },
     ],
@@ -178,5 +157,6 @@ export const verificationJSON = [
     Status: VerificationStatusEnum.Rejected,
     Remarks: "",
     DateOfVerification: "2021-04-25T12:49:51.141Z",
+    Description: "",
   },
 ];

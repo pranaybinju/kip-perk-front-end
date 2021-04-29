@@ -23,7 +23,7 @@ export const CheckboxGroup = forwardRef(
     }, [value, onChange]);
 
     return (
-      <Container className="flex flex-col">
+      <Container className="flex flex-col my-2">
         {React.Children.map(children, (child, index) => {
           return React.cloneElement(child, {
             onValChange: onCheckBoxValChange,
@@ -44,8 +44,8 @@ export const Checkbox = ({
   name,
   value,
 }: any) => (
-  <Container className="px-4 py-2">
-    <Container className="flex items-center mr-4 mt-2">
+  <Container className="py-2">
+    <Container className="flex items-center">
       <Input
         onChange={(e: any) => {
           onValChange(e.target.value, e.target.checked);
