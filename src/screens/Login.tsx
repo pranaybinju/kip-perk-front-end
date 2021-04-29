@@ -14,6 +14,7 @@ import {
 } from "../components";
 
 import Gift from "../assets/undraw_gift1.svg";
+import Kipperk from "../assets/logo.png";
 import React, { useCallback } from "react";
 import { userJSON } from "../data/users";
 import { verificationJSON } from "../data/verification";

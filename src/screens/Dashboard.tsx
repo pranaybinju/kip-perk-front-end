@@ -62,7 +62,7 @@ function Dashboard() {
               }`}
             />
           </NavLink>
-          {loggedInUser.CanVerifyClaims && (
+          {loggedInUser?.CanVerifyClaims && (
             <NavLink
               to="/verify"
               className="mx-2 pt-3 h-10 w-10 rounded-b-full flex items-center justify-center box-content border border-t-0 border-transparent hover:border-yellow-500"
@@ -96,7 +96,7 @@ function Dashboard() {
           </Route>
 
           <PrivateRoute
-            permission={loggedInUser.CanVerifyClaims}
+            permission={loggedInUser?.CanVerifyClaims}
             component={Verify}
             exact
             path="/verify"
