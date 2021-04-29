@@ -25,14 +25,11 @@ function Dashboard() {
 
   return (
     <React.Fragment>
-      <nav className="z-10 fixed top-0 left-0 right-0 w-full bg-gray-800  h-16 shadow-md flex items-center justify-between h-screen-10">
+      <nav className="z-10 fixed top-0 left-0 right-0 w-full bg-gray-800 h-16 shadow-md flex items-center justify-between">
         <Container className="flex flex-row">
           <Image
             className="block mx-4 rounded-full h-10 w-10 object-cover"
-            src={
-              //loggedInUser?.ImageURL ??
-              "https://images.unsplash.com/photo-1548546738-8509cb246ed3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80"
-            }
+            src={ loggedInUser.ImageURL }
           />
           <Text className="self-center font-medium text-white">
             {`${loggedInUser?.FirstName} ${loggedInUser?.LastName}`}{" "}

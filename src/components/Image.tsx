@@ -1,10 +1,12 @@
+import userPlaceholder from "../assets/user_placeholder.jpg";
+
 interface ImageProps
   extends React.DetailedHTMLProps<
     React.ImgHTMLAttributes<HTMLImageElement>,
     HTMLImageElement
   > {}
 const Image = (props: ImageProps) => {
-  return <img {...props} />;
+  return <img {...props} src={props.src || userPlaceholder} />;
 };
 
 export default Image;
