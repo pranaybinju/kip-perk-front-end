@@ -1,5 +1,5 @@
 import { ClaimEnum } from "./enum";
-const claims = [
+export const claims = [
   {
     EmpId: 1,
     FirstName: "Sam",

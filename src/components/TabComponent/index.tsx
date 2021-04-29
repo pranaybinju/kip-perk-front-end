@@ -36,7 +36,7 @@ export const TabHeader = (props: any) => {
             className={
               "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
               (props.openTab === index
-                ? "text-white bg-" + props.color + "-600"
+                ? "text-white bg-" + props.color
                 : "text-" + props.color + "-600 bg-white")
             }
             onClick={(e: { preventDefault: () => void }) => {

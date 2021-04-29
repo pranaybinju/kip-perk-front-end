@@ -35,6 +35,7 @@ export const verificationJSON = [
     Status: VerificationStatusEnum.Approved,
     Remarks: "",
     DateOfVerification: "2021-04-25T13:49:51.141Z",
+    Description: "",
   },
 
   {
@@ -70,7 +71,8 @@ export const verificationJSON = [
     ClaimDate: "2021-04-24T12:49:51.141Z",
     Status: VerificationStatusEnum.Pending,
     Remarks: "",
-    DateOfVerification: null,
+    DateOfVerification: "",
+    Description: "",
   },
 
   {
@@ -107,6 +109,7 @@ export const verificationJSON = [
     Status: VerificationStatusEnum.Approved,
     Remarks: "",
     DateOfVerification: "2021-04-25T15:49:51.141Z",
+    Description: "",
   },
 
   {
@@ -141,7 +144,8 @@ export const verificationJSON = [
     ClaimDate: "2021-04-24T14:49:51.141Z",
     Status: VerificationStatusEnum.Pending,
     Remarks: "",
-    DateOfVerification: null,
+    DateOfVerification: "",
+    Description: "",
   },
 
   {
@@ -178,5 +182,6 @@ export const verificationJSON = [
     Status: VerificationStatusEnum.Rejected,
     Remarks: "",
     DateOfVerification: "2021-04-25T12:49:51.141Z",
+    Description: "",
   },
 ];

@@ -10,6 +10,7 @@ export const userJSON = [
     TotalPoints: 10,
     UserName: "sam",
     Password: "sam123",
+    CanVerifyClaims: false,
   },
 
   {
@@ -22,6 +23,7 @@ export const userJSON = [
     TotalPoints: 20,
     UserName: "james",
     Password: "james123",
+    CanVerifyClaims: false,
   },
 
   {
@@ -35,6 +37,7 @@ export const userJSON = [
     TotalPoints: 30,
     UserName: "peter",
     Password: "peter123",
+    CanVerifyClaims: false,
   },
 
   {
@@ -47,6 +50,7 @@ export const userJSON = [
     TotalPoints: 10,
     UserName: "bruce",
     Password: "bruce123",
+    CanVerifyClaims: false,
   },
 
   {
@@ -59,6 +63,7 @@ export const userJSON = [
     TotalPoints: 30,
     UserName: "stephen",
     Password: "stephen123",
+    CanVerifyClaims: false,
   },
 
   {
@@ -71,6 +76,7 @@ export const userJSON = [
     TotalPoints: 40,
     UserName: "natasha",
     Password: "natasha123",
+    CanVerifyClaims: false,
   },
 
   {
@@ -83,6 +89,7 @@ export const userJSON = [
     TotalPoints: 90,
     UserName: "tony",
     Password: "tony123",
+    CanVerifyClaims: true,
   },
 
   {
@@ -95,6 +102,7 @@ export const userJSON = [
     TotalPoints: 80,
     UserName: "steve",
     Password: "steve123",
+    CanVerifyClaims: true,
   },
 
   {
@@ -107,6 +115,7 @@ export const userJSON = [
     TotalPoints: 50,
     UserName: "nick",
     Password: "nick123",
+    CanVerifyClaims: true,
   },
 
   {
@@ -119,5 +128,6 @@ export const userJSON = [
     TotalPoints: 30,
     UserName: "carol",
     Password: "carol123",
+    CanVerifyClaims: false,
   },
 ];

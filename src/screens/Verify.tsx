@@ -1,7 +1,9 @@
 import { useCallback, useMemo, useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import dayjs from "dayjs";
-import { Link } from "react-router-dom";
+import { toast, ToastContainer, Flip } from "react-toastify";
+
+import { Link, useHistory } from "react-router-dom";
 import {
   Container,
   Text,
@@ -11,18 +13,28 @@ import {
   Modal,
   Tag,
   VerificationForm,
+  Heading,
 } from "../components";
 import { TabPanel, TabBody, TabHeader } from "../components/TabComponent";
 import useVisibilityToggler from "../hooks/useVisibilityToggler";
 import { verificationJSON } from "../data/verification";
 import { ClaimEnum, VerificationStatusEnum } from "../data/enum";
 import { CheckIcon, XIcon } from "@heroicons/react/solid";
+import LocalStorageService from "../utils/localstorage";
 
 function Verify() {
   const [claimToVerify, setClaimToVerify] = useState<any>(null);
-
+  const history = useHistory();
   //temp state for demo
-  const [verificationData, setVerificationData] = useState(verificationJSON);
+  const [verificationData, setVerificationData] = useState(
+    LocalStorageService.readItem("verification")
+      ? JSON.parse(
+          //@ts-ignore
+          LocalStorageService.readItem("verification")
+        )
+      : verificationJSON
+  );
+
   const methods = useForm();
   const {
     isOpen: isApproveFormVisible,
@@ -159,7 +171,7 @@ function Verify() {
   const approvedClaims = useMemo(
     () =>
       verificationData.filter(
-        (datum) => datum.Status === VerificationStatusEnum.Approved
+        (datum: any) => datum.Status === VerificationStatusEnum.Approved
       ),
     [verificationData]
   );
@@ -167,7 +179,7 @@ function Verify() {
   const rejectedClaims = useMemo(
     () =>
       verificationData.filter(
-        (datum) => datum.Status === VerificationStatusEnum.Rejected
+        (datum: any) => datum.Status === VerificationStatusEnum.Rejected
       ),
     [verificationData]
   );
@@ -175,30 +187,52 @@ function Verify() {
   const pendingClaims = useMemo(
     () =>
       verificationData.filter(
-        (datum) => datum.Status === VerificationStatusEnum.Pending
+        (datum: any) => datum.Status === VerificationStatusEnum.Pending
       ),
     [verificationData]
   );
 
   const onApproveClaim = useCallback(
     (data: any) => {
-      setVerificationData(
-        verificationData.map((datum: any) => {
-          if (datum?.ClaimId === claimToVerify.ClaimId) {
-            return {
-              ...datum,
-              Remarks: data.note,
-              DateOfVerification: dayjs().format(),
-              Status: VerificationStatusEnum.Approved,
-            };
-          }
-          return datum;
-        })
+      const updatedVerification = verificationData.map((datum: any) => {
+        if (datum?.ClaimId === claimToVerify.ClaimId) {
+          return {
+            ...datum,
+            Remarks: data.note,
+            DateOfVerification: dayjs().format(),
+            Status: VerificationStatusEnum.Approved,
+          };
+        }
+        return datum;
+      });
+      LocalStorageService.writeItem(
+        "verification",
+        JSON.stringify(updatedVerification)
       );
+
+      setVerificationData(updatedVerification);
+
       setClaimToVerify(null);
       closeApproveForm();
+
+      toast.success(
+        `${claimToVerify.FirstName} ${claimToVerify.LastName}'s claim for ${
+          ClaimEnum[claimToVerify.ClaimFor]
+        } approved`,
+        {
+          position: toast.POSITION.TOP_CENTER,
+          pauseOnHover: false,
+        }
+      );
     },
-    [claimToVerify?.ClaimId, closeApproveForm, verificationData]
+    [
+      claimToVerify?.ClaimId,
+      claimToVerify?.ClaimFor,
+      claimToVerify?.FirstName,
+      claimToVerify?.LastName,
+      closeApproveForm,
+      verificationData,
+    ]
   );
 
   const onRejectClaim = useCallback(
@@ -216,15 +250,50 @@ function Verify() {
           return datum;
         })
       );
+
+      toast.error(
+        `${claimToVerify.FirstName} ${claimToVerify.LastName}'s claime for ${
+          ClaimEnum[claimToVerify.ClaimFor]
+        } rejected`,
+        {
+          position: toast.POSITION.TOP_CENTER,
+          pauseOnHover: false,
+        }
+      );
+      LocalStorageService.writeItem(
+        "verification",
+        JSON.stringify(
+          verificationData.map((datum: any) => {
+            if (datum?.ClaimId === claimToVerify.ClaimId) {
+              return {
+                ...datum,
+                Remarks: data.reason,
+                DateOfVerification: dayjs().format(),
+                Status: VerificationStatusEnum.Rejected,
+              };
+            }
+            return datum;
+          })
+        )
+      );
       setClaimToVerify(null);
       closeRejectForm();
     },
-    [verificationData, closeRejectForm, claimToVerify?.ClaimId]
+    [
+      verificationData,
+      closeRejectForm,
+      claimToVerify?.ClaimId,
+      claimToVerify?.ClaimFor,
+      claimToVerify?.LastName,
+      claimToVerify?.FirstName,
+    ]
   );
 
   return (
-    <Container className="m-4">
-      <TabPanel color="purple">
+    <Container>
+      <Heading className="text-primary my-4">Verify Claims</Heading>
+
+      <TabPanel color="primary">
         <TabHeader>
           <Text>{"All"}</Text>
           <Text>{"Pending"}</Text>
@@ -314,6 +383,7 @@ function Verify() {
           <VerificationForm claimToVerify={claimToVerify} type="Reject" />
         </Modal>
       </FormProvider>
+      <ToastContainer transition={Flip} autoClose={3000} />
     </Container>
   );
 }

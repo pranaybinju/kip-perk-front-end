@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useUserContext } from "../contexts/userContext";
 
@@ -11,12 +10,14 @@ import {
   Input,
   FormLabel,
   ErrorLabel,
-  Text
-} from "../components"
+  Text,
+} from "../components";
 
 import Gift from "../assets/undraw_gift1.svg";
 import React, { useCallback } from "react";
 import { userJSON } from "../data/users";
+import { verificationJSON } from "../data/verification";
+import { claims } from "../data/claim";
 import LocalStorageService from "../utils/localstorage";
 function Login() {
   const { register, errors, handleSubmit } = useForm();
@@ -32,13 +33,24 @@ function Login() {
       );
       if (user) {
         LocalStorageService.writeItem("loggedInUser", JSON.stringify(user));
+
+        if (LocalStorageService.readItem("verification") === null) {
+          LocalStorageService.writeItem(
+            "verification",
+            JSON.stringify(verificationJSON)
+          );
+        }
+        if (LocalStorageService.readItem("claims") === null) {
+          LocalStorageService.writeItem("claims", JSON.stringify(claims));
+        }
+
         setCurrentUser(user);
         history.push("/");
       } else {
         return;
       }
     },
-    [setCurrentUser]
+    [setCurrentUser, history]
   );
 
   return (

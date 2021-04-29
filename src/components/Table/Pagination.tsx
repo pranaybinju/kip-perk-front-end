@@ -1,16 +1,14 @@
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/solid";
 import IconButton from "../IconButton";
 import { PaginationProps } from "./ITable";
-
 const Pagination = ({
   previousPage,
   canPreviousPage,
   nextPage,
   canNextPage,
 }: PaginationProps) => {
-  console.log(canPreviousPage);
   return (
-    <div className="py-2">
+    <div className="p-4 flex justify-end">
       <nav className="block">
         <ul className="flex pl-0 rounded list-none flex-wrap">
           <li>
