@@ -83,23 +83,23 @@ function Verify() {
         Header: "Status",
         Cell: ({ row }: any) =>
           row.original.Status === VerificationStatusEnum.Approved ? (
-            <Text className={`text-green-400 text-center`}>
+            <Text className={`text-green-400 text-left`}>
               {VerificationStatusEnum[row.original.Status]}
             </Text>
           ) : row.original.Status === VerificationStatusEnum.Rejected ? (
-            <Text className={`text-red-400 text-center`}>
+            <Text className={`text-red-400 text-left`}>
               {VerificationStatusEnum[row.original.Status]}
             </Text>
           ) : (
             <Container className="flex flex-col">
-              <Text className={`text-black text-center`}>{"Pending"}</Text>
-              <Container className="flex flex-row justify-center ">
+              <Text className={`text-black `}>{"Pending"}</Text>
+              <Container className="flex flex-row justify-start ">
                 <IconButton
                   onClick={() => {
                     setClaimToVerify(row.original);
                     openRejectForm();
                   }}
-                  className={`mr-2 first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-transparent bg-white`}
+                  className={`mr-1 first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-start leading-tight relative border border-solid border-transparent bg-white`}
                   icon={<XIcon className="h-5 w-5 text-red-500" />}
                 ></IconButton>
                 <IconButton
@@ -107,7 +107,7 @@ function Verify() {
                     setClaimToVerify(row.original);
                     openApproveForm();
                   }}
-                  className={`first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-transparent bg-white`}
+                  className={`first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-start leading-tight relative border border-solid border-transparent bg-white`}
                   icon={<CheckIcon className="h-5 w-5 text-green-500" />}
                 ></IconButton>
               </Container>
@@ -150,11 +150,11 @@ function Verify() {
         Header: "Status",
         Cell: ({ row }: any) =>
           row.original.Status === VerificationStatusEnum.Approved ? (
-            <Text className={`text-green-400 text-center`}>
+            <Text className={`text-green-400 `}>
               {VerificationStatusEnum[row.original.Status]}
             </Text>
           ) : (
-            <Text className={`text-red-400 text-center`}>
+            <Text className={`text-red-400 `}>
               {VerificationStatusEnum[row.original.Status]}
             </Text>
           ),
@@ -252,7 +252,7 @@ function Verify() {
       );
 
       toast.error(
-        `${claimToVerify.FirstName} ${claimToVerify.LastName}'s claime for ${
+        `${claimToVerify.FirstName} ${claimToVerify.LastName}'s claim for ${
           ClaimEnum[claimToVerify.ClaimFor]
         } rejected`,
         {
