@@ -20,7 +20,7 @@ import LocalStorageService from "../utils/localstorage";
 
 function Dashboard() {
   const location = useLocation();
-  const { loggedInUser, setCurrentUser } = useUserContext();
+  const { loggedInUser } = useUserContext();
   const history = useHistory();
 
   return (

@@ -6,11 +6,11 @@ import {
   Heading,
   Input,
   FormLabel,
-  Text
+  Text,
 } from "../components";
 
 function Register() {
-  const { register, errors } = useForm();
+  const { register } = useForm();
   return (
     <Container className="text-black h-full flex justify-center items-center  shadow-md">
       <Container className="bg-white w-96 p-8 rounded-xl">

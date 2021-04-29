@@ -1,12 +1,12 @@
 import { ClaimEnum } from "../data/enum";
 
-export const colorMapper = (claimeType: number) => {
+export const colorMapper = (claimeType: number, variant: string = "100") => {
   switch (claimeType) {
     case ClaimEnum.COE:
-      return "green-100";
+      return `green-${variant}`;
     case ClaimEnum.Hiring:
-      return "blue-100";
+      return `blue-${variant}`;
     case ClaimEnum.KFC:
-      return "violet-100";
+      return `violet-${variant}`;
   }
 };

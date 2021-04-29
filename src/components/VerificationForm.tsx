@@ -2,7 +2,6 @@ import { Controller, useFormContext } from "react-hook-form";
 import { Container, Textarea, FormLabel, ErrorLabel } from "./";
 
 import { CheckboxGroup, Checkbox } from "../components/Checkbox/CheckboxGroup";
-import { useCallback } from "react";
 
 const VerificationForm = ({ type, claimToVerify }: any) => {
   const { register, errors, control } = useFormContext();

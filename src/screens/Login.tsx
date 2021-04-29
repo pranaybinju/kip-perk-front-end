@@ -1,4 +1,4 @@
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useUserContext } from "../contexts/userContext";
 
 import { useForm } from "react-hook-form";
@@ -10,7 +10,6 @@ import {
   Input,
   FormLabel,
   ErrorLabel,
-  Text,
 } from "../components";
 
 import Gift from "../assets/undraw_gift1.svg";
@@ -23,7 +22,7 @@ import LocalStorageService from "../utils/localstorage";
 function Login() {
   const { register, errors, handleSubmit } = useForm();
   const history = useHistory();
-  const { loggedInUser, setCurrentUser } = useUserContext();
+  const { setCurrentUser } = useUserContext();
 
   const onLogin = useCallback(
     (data: any) => {
@@ -46,7 +45,7 @@ function Login() {
         }
 
         setCurrentUser(user);
-        history.push("/");
+        history.push("/home");
       } else {
         return;
       }
@@ -129,11 +128,11 @@ function Login() {
                 {errors.Password && (
                   <ErrorLabel>{errors.Password.message}</ErrorLabel>
                 )}
-                <Container className="flex justify-end mt-2 text-xs">
+                {/* <Container className="flex justify-end mt-2 text-xs">
                   <Link to="/reset">
                     <Text className="text-primary">{"Forgot Password?"}</Text>
                   </Link>
-                </Container>
+                </Container> */}
               </Container>
 
               <Button type="submit" variant="outline" hoverVariant="solid">
@@ -141,12 +140,12 @@ function Login() {
               </Button>
             </form>
 
-            <Text className="mt-12 text-xs text-center font-light flex justify-center">
+            {/* <Text className="mt-12 text-xs text-center font-light flex justify-center">
               <Text className="text-gray">{"Don't have an account?"}</Text>
               <Link to="/register" className="text-black font-medium">
                 <Text className="ml-1 text-primary">{"Register"}</Text>
               </Link>
-            </Text>
+            </Text> */}
           </Container>
         </Container>
       </Container>

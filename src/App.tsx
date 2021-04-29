@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,12 +6,11 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import { Login, Register, Dashboard, Home, PrivateRoute } from "./screens";
+import { Login, Register, Dashboard, PrivateRoute } from "./screens";
 import { Container } from "./components";
 import { UserContext } from "./contexts/userContext";
 import LocalStorageService from "./utils/localstorage";
 
-// TODO: Route to be made private based on permissions
 function App() {
   const [loggedInUser, setCurrentUser] = useState(
     LocalStorageService.readItem("loggedInUser")

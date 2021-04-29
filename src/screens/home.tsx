@@ -26,33 +26,39 @@ function Home() {
         )
         .map((approvedVerification: any) => (
           <Container
-            className={`flex justify-between bg-white  bg-gradient-to-r from-transparent to-${colorMapper(
-              approvedVerification.ClaimFor
-            )} py-4 shadow-md rounded-lg mb-4`}
+            className={`grid grid-flow-col grid-cols-3 grid-rows-1 gap-16 bg-white  bg-gradient-to-r from-transparent to-${colorMapper(
+              approvedVerification.ClaimFor,
+              "100"
+            )} p-4 shadow-md rounded-lg mb-4`}
           >
-            <Container className="flex flex-col ml-4">
+            <Container className="flex flex-col ">
               <Image
                 className="mx-4 rounded-full h-10 w-10 object-cover self-center"
-                src="https://images.unsplash.com/photo-1548546738-8509cb246ed3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80"
+                src={approvedVerification.ImageURL}
               />
 
-              <Text className="text-3xl font-bold">{`${approvedVerification.FirstName} ${approvedVerification.LastName}`}</Text>
+              <Text className="text-3xl font-bold text-center">{`${approvedVerification.FirstName} ${approvedVerification.LastName}`}</Text>
             </Container>
 
-            <Container className="self-center">
+            <Container className="flex flex-1 flex-col self-center align-end">
               <Container className="flex flex-row">
-                <StarIcon className="h-5 w-5 text-yellow-500 align-text-bottom inline" />
+                <StarIcon className="h-8 w-8 text-yellow-500 align-text-bottom inline" />
 
                 <Text className="text-xl ml-1 font-bold">{`earned ${approvedVerification.PointsToClaim} Points for`}</Text>
               </Container>
 
-              <Text className="text-purple-500 text-lg font-bold ml-1">
+              <Text
+                className={`text-${colorMapper(
+                  approvedVerification.ClaimFor,
+                  "500"
+                )} text-lg font-bold ml-1`}
+              >
                 {ClaimEnum[approvedVerification.ClaimFor]}
               </Text>
             </Container>
 
             <Container className="relative self-center mr-8">
-              <Text className="font-black text-md">
+              <Text className="font-black text-md text-center">
                 {dayjs(approvedVerification.ClaimDate).format("dd DD/MM/YYYY")}
               </Text>
             </Container>

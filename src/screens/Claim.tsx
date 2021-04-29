@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo, useEffect } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 import dayjs from "dayjs";
 import { useUserContext } from "../contexts/userContext";
 import Select from "react-select";
@@ -10,7 +10,6 @@ import { toast, ToastContainer, Flip } from "react-toastify";
 import {
   Container,
   Button,
-  Image,
   Heading,
   Input,
   FormLabel,

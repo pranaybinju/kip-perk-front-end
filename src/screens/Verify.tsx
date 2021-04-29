@@ -3,7 +3,6 @@ import { useForm, FormProvider } from "react-hook-form";
 import dayjs from "dayjs";
 import { toast, ToastContainer, Flip } from "react-toastify";
 
-import { Link, useHistory } from "react-router-dom";
 import {
   Container,
   Text,
@@ -24,8 +23,7 @@ import LocalStorageService from "../utils/localstorage";
 
 function Verify() {
   const [claimToVerify, setClaimToVerify] = useState<any>(null);
-  const history = useHistory();
-  //temp state for demo
+
   const [verificationData, setVerificationData] = useState(
     LocalStorageService.readItem("verification")
       ? JSON.parse(
