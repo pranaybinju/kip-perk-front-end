@@ -6,7 +6,7 @@ interface ImageProps
     HTMLImageElement
   > {}
 const Image = (props: ImageProps) => {
-  return <img {...props} src={props.src || userPlaceholder} />;
+  return <img alt="" {...props} src={props.src || userPlaceholder} />;
 };
 
 export default Image;
