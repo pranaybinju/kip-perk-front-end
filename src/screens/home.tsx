@@ -34,7 +34,7 @@ function Home() {
             <Container className="flex flex-col ">
               <Image
                 className="mx-4 rounded-full h-10 w-10 object-cover self-center"
-                src={approvedVerification.ImageURL}
+                src={approvedVerification?.ImageURL}
               />
 
               <Text className="text-3xl font-bold text-center">{`${approvedVerification.FirstName} ${approvedVerification.LastName}`}</Text>

@@ -29,7 +29,7 @@ function Dashboard() {
         <Container className="flex flex-row">
           <Image
             className="block mx-4 rounded-full h-10 w-10 object-cover"
-            src={loggedInUser.ImageURL}
+            src={loggedInUser?.ImageURL ?? ""}
           />
           <Text className="self-center font-medium text-white">
             {`${loggedInUser?.FirstName} ${loggedInUser?.LastName}`}{" "}
