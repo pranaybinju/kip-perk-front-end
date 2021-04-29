@@ -7,4 +7,4 @@ import Claim from "./Claim";
 import Verify from "./Verify";
 import PrivateRoute from "./PrivateRoute";
 
-export { Login, Register, Reset, Home, Dashboard, Claim, Verify, PrivateRoute };
+export { Login, Register, Reset, Dashboard, Home, Claim, Verify, PrivateRoute };

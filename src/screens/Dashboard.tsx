@@ -10,11 +10,11 @@ import {
   LogoutIcon,
   DocumentSearchIcon,
   PaperAirplaneIcon,
-  HomeIcon
+  HomeIcon,
 } from "@heroicons/react/solid";
 import { useUserContext } from "../contexts/userContext";
 import { Text, Button, Container, Image } from "../components";
-import { Claim, Home, Verify } from "./";
+import { Claim, Verify, Home } from "./";
 import PrivateRoute from "./PrivateRoute";
 import LocalStorageService from "../utils/localstorage";
 
@@ -29,7 +29,7 @@ function Dashboard() {
         <Container className="flex flex-row">
           <Image
             className="block mx-4 rounded-full h-10 w-10 object-cover"
-            src={ loggedInUser.ImageURL }
+            src={loggedInUser.ImageURL}
           />
           <Text className="self-center font-medium text-white">
             {`${loggedInUser?.FirstName} ${loggedInUser?.LastName}`}{" "}
@@ -38,14 +38,14 @@ function Dashboard() {
 
         <Container className="self-stretch flex">
           <NavLink
-            to="/"
+            to="/home"
             exact
             className="mx-2 pt-3 h-10 w-10 rounded-b-full flex items-center justify-center box-content border border-t-0 border-transparent hover:border-yellow-500"
             activeClassName="bg-yellow-500"
           >
             <HomeIcon
               className={`h-5 w-5 ${
-                location.pathname === "/" ? "text-white" : "text-yellow-500"
+                location.pathname === "/home" ? "text-white" : "text-yellow-500"
               }`}
             />
           </NavLink>
@@ -102,7 +102,7 @@ function Dashboard() {
             path="/verify"
           ></PrivateRoute>
 
-          <Route path="/">
+          <Route path="/home">
             <Home />
           </Route>
         </Switch>
