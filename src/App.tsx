@@ -27,7 +27,7 @@ function App() {
     setCurrentUser,
   ]);
   return (
-    <Container className="text-primary bg-secondary h-full overflow-auto">
+    <Container className="bg-secondary h-full overflow-auto">
       <UserContext.Provider value={userProvider}>
         <Router>
           <Switch>
