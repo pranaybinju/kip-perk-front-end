@@ -13,7 +13,7 @@ const PrivateRoute = ({
   ...rest
 }: PrivateRouteProps) => {
   const { loggedInUser } = useUserContext();
-  console.log(loggedInUser);
+
   return (
     <>
       <Route
@@ -21,12 +21,11 @@ const PrivateRoute = ({
         render={(props) =>
           loggedInUser ? (
             <>
-              {/* {canClaim ? (
-                
+              {permission ? (
+                <Component {...props} />
               ) : (
                 <Redirect to={{ pathname: "/" }} />
-              )} */}
-              <Component {...props} />
+              )}
             </>
           ) : (
             <Redirect to={"/login"} />

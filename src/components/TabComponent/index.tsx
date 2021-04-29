@@ -36,7 +36,7 @@ export const TabHeader = (props: any) => {
             className={
               "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
               (props.openTab === index
-                ? "text-white bg-" + props.color + "-600"
+                ? "text-white bg-" + props.color
                 : "text-" + props.color + "-600 bg-white")
             }
             onClick={(e: { preventDefault: () => void }) => {
@@ -58,7 +58,7 @@ export const TabBody = (props: any) => (
   <div
     className={`relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded`}
   >
-    <div className={`px-4 py-5 w-full ${props.className}`}>
+    <div className={`w-full ${props.className}`}>
       <div className={`tab-content tab-space  w-full ${props.className}`}>
         {React.Children.map(props.children, (child, index) =>
           index === props.openTab
