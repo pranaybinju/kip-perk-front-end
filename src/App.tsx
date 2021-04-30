@@ -6,7 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import { Login, Register, Dashboard, PrivateRoute } from "./screens";
+import { Login, Register, Dashboard } from "./screens";
 import { Container } from "./components";
 import { UserContext } from "./contexts/userContext";
 import LocalStorageService from "./utils/localstorage";

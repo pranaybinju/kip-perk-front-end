@@ -12,7 +12,7 @@ const Tag = (props: TagProps) => (
       className={`rounded-full py-${props.size} px-${props.size} bg-${props.colorScheme}-100`}
     >
       <Text
-        className={`text-center text-${props.size} text-${props.colorScheme}-500`}
+        className={`text-left text-${props.size} text-${props.colorScheme}-500`}
       >
         {props.children}
       </Text>
