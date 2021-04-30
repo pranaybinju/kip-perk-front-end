@@ -39,12 +39,8 @@ function App() {
             </Route>
 
             <Route path="/">
-              <Dashboard />
+              {loggedInUser ? <Dashboard /> : <Redirect to="/login" />}
             </Route>
-
-            <PrivateRoute component={Dashboard} path="/"></PrivateRoute>
-
-            <Redirect to={{ pathname: "/login" }} />
           </Switch>
         </Router>
       </UserContext.Provider>
