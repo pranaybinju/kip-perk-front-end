@@ -29,16 +29,8 @@ function Verify() {
       ? JSON.parse(
           //@ts-ignore
           LocalStorageService.readItem("verification")
-        ).filter(
-          (datum: any) =>
-            datum.Status === VerificationStatusEnum.Pending &&
-            datum.EmpId !== loggedInUser?.EmpId
         )
-      : verificationJSON.filter(
-          (datum: any) =>
-            datum.Status === VerificationStatusEnum.Pending &&
-            datum.EmpId !== loggedInUser?.EmpId
-        )
+      : verificationJSON
   );
 
   const methods = useForm();
