@@ -24,7 +24,7 @@ const PrivateRoute = ({
               {permission ? (
                 <Component {...props} />
               ) : (
-                <Redirect to={{ pathname: "/" }} />
+                <Redirect to={{ pathname: "/home" }} />
               )}
             </>
           ) : (
