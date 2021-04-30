@@ -20,20 +20,29 @@ import { verificationJSON } from "../data/verification";
 import { ClaimEnum, VerificationStatusEnum } from "../data/enum";
 import { CheckIcon, XIcon } from "@heroicons/react/solid";
 import LocalStorageService from "../utils/localstorage";
-
+import { useUserContext } from "../contexts/userContext";
 function Verify() {
   const [claimToVerify, setClaimToVerify] = useState<any>(null);
-
+  const { loggedInUser } = useUserContext();
   const [verificationData, setVerificationData] = useState(
     LocalStorageService.readItem("verification")
       ? JSON.parse(
           //@ts-ignore
           LocalStorageService.readItem("verification")
+        ).filter(
+          (datum: any) =>
+            datum.Status === VerificationStatusEnum.Pending &&
+            datum.EmpId !== loggedInUser?.EmpId
         )
-      : verificationJSON
+      : verificationJSON.filter(
+          (datum: any) =>
+            datum.Status === VerificationStatusEnum.Pending &&
+            datum.EmpId !== loggedInUser?.EmpId
+        )
   );
 
   const methods = useForm();
+
   const {
     isOpen: isApproveFormVisible,
     onOpen: openApproveForm,
@@ -185,9 +194,11 @@ function Verify() {
   const pendingClaims = useMemo(
     () =>
       verificationData.filter(
-        (datum: any) => datum.Status === VerificationStatusEnum.Pending
+        (datum: any) =>
+          datum.Status === VerificationStatusEnum.Pending &&
+          datum.EmpId !== loggedInUser?.EmpId
       ),
-    [verificationData]
+    [verificationData, loggedInUser?.EmpId]
   );
 
   const onApproveClaim = useCallback(

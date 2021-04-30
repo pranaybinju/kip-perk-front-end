@@ -29,8 +29,10 @@ const validate = (val: any) => {
 };
 function Claim() {
   const { loggedInUser } = useUserContext();
-  const { register, errors, control, reset, handleSubmit } = useForm();
+  const { register, errors, control, reset, handleSubmit, watch } = useForm();
   const history = useHistory();
+
+  const claimWatch = watch("claimType");
 
   const [verification, setVerification] = useState(
     LocalStorageService.readItem("verification")
@@ -50,9 +52,13 @@ function Claim() {
             value: user.EmpId,
           };
         })
-        .filter((mappedUser: any) => mappedUser.EmpId !== loggedInUser.EmpId),
+        .filter(
+          (mappedUser: any) =>
+            mappedUser.EmpId !== loggedInUser.EmpId &&
+            mappedUser?.Claims?.includes(claimWatch?.value)
+        ),
 
-    [loggedInUser.EmpId]
+    [loggedInUser.EmpId, claimWatch?.value]
   );
 
   const claimOptions = useMemo(
