@@ -32,10 +32,11 @@ const Button = (props: ButtonProps) => {
       className += ` duration-300 hover:border-none hover:text-primary`;
       break;
   }
+
   return (
     <button
       className={`rounded-md text-center p-2  w-20 ${className} ${props.className}`}
-      {...props}
+      {...{...props, variant: null, hoverVariant: null}}
     >
       {props.children}
     </button>
